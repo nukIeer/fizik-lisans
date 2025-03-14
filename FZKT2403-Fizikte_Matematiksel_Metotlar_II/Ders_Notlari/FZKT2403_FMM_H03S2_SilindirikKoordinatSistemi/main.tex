@@ -1,0 +1,302 @@
+\documentclass[11pt,letterpaper,twocolumn]{fenbil}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{mathtools}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{minipage}{0.15\textwidth}
+{
+\includegraphics[width=4cm]{logo/iufizik.png}
+}
+\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.75\textwidth}
+\vspace{5mm}
+\Large{\textbf{FİZİKTE MATEMATİKSEL METOTLAR \\ 6 MART 2025 }}
+\vspace{3mm}\\
+\large{\textbf{Ad Soyad:} Celal Ekrem Torun - 0411230037}
+\vspace{2mm}\\
+\large{\textbf{DERS:} Prof. Dr. ERTAN GUDEKLI}\newline
+\fontsize{0.35cm}{0.5cm}\selectfont
+\textit{Fizik Bölümü, İstanbul Üniversitesi\newline
+Beyazıt, Fatih, İstanbul, Türkiye\newline
+13 Mart 2025}
+\end{minipage}
+\small
+\end{@twocolumnfalse}]
+
+\hspace{25pt}
+\hspace{25pt}
+\hspace{25pt}
+
+
+\section*{Temel Kavramlar}
+\begin{itemize}
+    \item Kısmi türevler genellikle $\partial$ sembolü ile gösterilir.
+    \item Koordinat sistemlerinde birim vektörler, sistemin geometrisini tanımlamak için önemlidir.
+    \item Silindirik koordinat sistemi $(\rho, \theta, z)$ ile tanımlanır.
+    \item Küresel koordinat sistemi $(r, \theta, \phi)$ ile tanımlanır.
+\end{itemize}
+
+\section*{Soru 2: Silindirik Koordinat Sisteminin Dikliğinin İspatı}
+
+\subsection*{Yöntem 1: Birim Vektörlerin Skaler Çarpımı}
+
+Bir koordinat sisteminin dik olması için, sistemin birim vektörlerinin birbirine dik (ortogonal) olması gerekir. Silindirik koordinat sisteminde birim vektörler $\vec{e}_\rho$, $\vec{e}_\theta$ ve $\vec{e}_z$'dir.
+
+İki vektörün birbirine dik olması için skaler çarpımlarının sıfır olması gerekir. Bunu şu şekilde kontrol edelim:
+
+\begin{align}
+    \vec{e}_\rho \cdot \vec{e}_\theta &= 0 \\
+    \vec{e}_\rho \cdot \vec{e}_z &= 0 \\
+    \vec{e}_\theta \cdot \vec{e}_z &= 0
+\end{align}
+
+Bu skaler çarpımların sıfır olduğunu gösterebiliriz:
+
+1) $\vec{e}_\rho \cdot \vec{e}_\theta$: $\vec{e}_\rho$ $\rho$ yönündedir ve $\vec{e}_\theta$ teğetsel yöndedir. Geometrik olarak bunlar birbirine diktir, dolayısıyla çarpımları sıfırdır.
+
+2) $\vec{e}_\rho \cdot \vec{e}_z$: $\vec{e}_\rho$ $xy$-düzlemindedir, $\vec{e}_z$ ise $z$-eksenindedir ve bu iki yön birbirine diktir, dolayısıyla çarpımları sıfırdır.
+
+3) $\vec{e}_\theta \cdot \vec{e}_z$: $\vec{e}_\theta$ $xy$-düzlemindedir ve dairesel harekete teğettir, $\vec{e}_z$ ise $z$-eksenindedir. Bu ikisi birbirine diktir, dolayısıyla çarpımları sıfırdır.
+
+\subsection*{Yöntem 2: Teğet Bileşenlerin Kontrolü}
+
+Koordinat eğrilerine teğet olan birim vektörler için de benzer bir kontrol yapabiliriz:
+
+\begin{align}
+    \vec{t}_\rho \cdot \vec{t}_\theta &= 0 \\
+    \vec{t}_\rho \cdot \vec{t}_z &= 0 \\
+    \vec{t}_\theta \cdot \vec{t}_z &= 0
+\end{align}
+
+Burada $\vec{t}_\rho$, $\vec{t}_\theta$ ve $\vec{t}_z$, ilgili koordinat eğrilerine teğet vektörlerdir.
+
+Silindirik koordinat sisteminde:
+\begin{itemize}
+    \item $\vec{t}_\rho$ radyal yönde (merkezden dışarıya doğru)
+    \item $\vec{t}_\theta$ açısal yönde (dairesel hareket yönünde)
+    \item $\vec{t}_z$ dikey yönde
+\end{itemize}
+
+Bu üç yön birbirine dik olduğundan, teğet vektörlerin skaler çarpımları sıfırdır. Dolayısıyla silindirik koordinat sistemi diktir.
+
+\section*{Soru 3: Silindirik ve Kartezyen Koordinatlar Arasındaki Dönüşüm}
+
+\subsection*{Adım 1: Birim Vektörlerin İfadesi}
+
+Silindirik koordinatlardaki birim vektörleri Kartezyen birim vektörleri cinsinden ifade edelim:
+
+\begin{align}
+    \vec{e}_\rho &= \cos\theta \, \vec{e}_x + \sin\theta \, \vec{e}_y \\
+    \vec{e}_\theta &= -\sin\theta \, \vec{e}_x + \cos\theta \, \vec{e}_y \\
+    \vec{e}_z &= \vec{e}_z
+\end{align}
+
+Bu ifadeleri geometrik olarak doğrulayabiliriz:
+\begin{itemize}
+    \item $\vec{e}_\rho$: Merkezden dışarıya doğru olan birim vektör, $x$-ekseni ile $\theta$ açısı yapıyorsa, $x$ bileşeni $\cos\theta$, $y$ bileşeni $\sin\theta$ olur.
+    \item $\vec{e}_\theta$: $\vec{e}_\rho$'ya dik olan teğet birim vektör, $x$ bileşeni $-\sin\theta$, $y$ bileşeni $\cos\theta$ olur.
+    \item $\vec{e}_z$: Dikey eksen her iki sistemde de aynıdır.
+\end{itemize}
+
+\subsection*{Adım 2: Koordinat Dönüşüm İlişkileri}
+
+Silindirik ve Kartezyen koordinatlar arasındaki dönüşüm ilişkileri:
+
+\begin{align}
+    x &= \rho \cos\theta \\
+    y &= \rho \sin\theta \\
+    z &= z
+\end{align}
+
+Tersi:
+\begin{align}
+    \rho &= \sqrt{x^2 + y^2} \\
+    \theta &= \arctan\left(\frac{y}{x}\right) \\
+    z &= z
+\end{align}
+
+\subsection*{Adım 3: Dönüşüm Matrisi}
+
+Birim vektörler arasındaki ilişkiyi matris formunda yazalım:
+
+\begin{align}
+    \begin{bmatrix}
+        \vec{e}_\rho \\
+        \vec{e}_\theta \\
+        \vec{e}_z
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        \cos\theta & \sin\theta & 0 \\
+        -\sin\theta & \cos\theta & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        \vec{e}_x \\
+        \vec{e}_y \\
+        \vec{e}_z
+    \end{bmatrix}
+\end{align}
+
+Bu dönüşüm matrisi $A$ olsun. Matrisin özelliklerini inceleyelim:
+\begin{itemize}
+    \item $A$ ortogonal bir matristir: $A^T A = I$
+    \item Ortogonal matris olduğundan $A^{-1} = A^T$
+    \item Determinantı $|A| = 1$ olduğundan, bu dönüşüm uzunlukları ve açıları korur.
+\end{itemize}
+
+\subsection*{Adım 4: Matris Tersi ile Ters Dönüşüm}
+
+Dönüşüm matrisinin tersi:
+\begin{align}
+    A^{-1} = A^T = 
+    \begin{bmatrix}
+        \cos\theta & -\sin\theta & 0 \\
+        \sin\theta & \cos\theta & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+\end{align}
+
+Dönüşüm matrislerini kullanarak şu ilişkileri yazabiliriz:
+\begin{align}
+    \vec{x} &= A\vec{y} \\
+    \vec{y} &= A^{-1}\vec{x}
+\end{align}
+Burada $\vec{x}$ Kartezyen sistemi, $\vec{y}$ ise silindirik sistemi temsil eder.
+
+\subsection*{Adım 5: Konum Vektörünün İfadesi}
+
+Konum vektörü $\vec{r}$'yi her iki koordinat sisteminde de ifade edelim.
+
+Kartezyen koordinatlarda:
+\begin{align}
+    \vec{r} &= x\vec{e}_x + y\vec{e}_y + z\vec{e}_z
+\end{align}
+
+Bu ifadeye silindirik koordinatları yerleştirelim:
+\begin{align}
+    \vec{r} &= \rho\cos\theta\vec{e}_x + \rho\sin\theta\vec{e}_y + z\vec{e}_z
+\end{align}
+
+Şimdi Kartezyen birim vektörlerini silindirik birim vektörleri cinsinden yazalım. Dönüşüm matrisinin tersi ile:
+\begin{align}
+    \begin{bmatrix}
+        \vec{e}_x \\
+        \vec{e}_y \\
+        \vec{e}_z
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        \cos\theta & -\sin\theta & 0 \\
+        \sin\theta & \cos\theta & 0 \\
+        0 & 0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        \vec{e}_\rho \\
+        \vec{e}_\theta \\
+        \vec{e}_z
+    \end{bmatrix}
+\end{align}
+
+Yani:
+\begin{align}
+    \vec{e}_x &= \cos\theta\vec{e}_\rho - \sin\theta\vec{e}_\theta \\
+    \vec{e}_y &= \sin\theta\vec{e}_\rho + \cos\theta\vec{e}_\theta \\
+    \vec{e}_z &= \vec{e}_z
+\end{align}
+
+Bu ifadeleri konum vektöründe yerine koyalım:
+\begin{align}
+    \vec{r} &= \rho\cos\theta(\cos\theta\vec{e}_\rho - \sin\theta\vec{e}_\theta) + \rho\sin\theta(\sin\theta\vec{e}_\rho + \cos\theta\vec{e}_\theta) + z\vec{e}_z \\
+    &= \rho\cos^2\theta\vec{e}_\rho - \rho\cos\theta\sin\theta\vec{e}_\theta + \rho\sin^2\theta\vec{e}_\rho + \rho\sin\theta\cos\theta\vec{e}_\theta + z\vec{e}_z
+\end{align}
+
+Terimlerini düzenleyelim:
+\begin{align}
+    \vec{r} &= \rho(\cos^2\theta + \sin^2\theta)\vec{e}_\rho + \rho(\sin\theta\cos\theta - \cos\theta\sin\theta)\vec{e}_\theta + z\vec{e}_z \\
+    &= \rho \cdot 1 \cdot \vec{e}_\rho + \rho \cdot 0 \cdot \vec{e}_\theta + z\vec{e}_z \\
+    &= \rho\vec{e}_\rho + z\vec{e}_z
+\end{align}
+
+Bu, silindirik koordinatlarda konum vektörünün beklenen ifadesidir.
+
+\section*{Vektör Alanlarının Silindirik Koordinatlara Dönüşümü}
+
+Verilen vektör alanları:
+\begin{align}
+    U_1 &= 2xy^2 + x^2 \\
+    U_2 &= xy + z \\
+    U_3 &= x^2y + z^2y + z
+\end{align}
+
+Bu alanları silindirik koordinatlara dönüştürmek için, Kartezyen değişkenleri silindirik koordinatlar cinsinden yazalım:
+
+$x = \rho\cos\theta$, $y = \rho\sin\theta$, $z = z$
+
+\subsection*{$U_1$ Vektör Alanının Dönüşümü}
+\begin{align}
+    U_1 &= 2xy^2 + x^2 \\
+    &= 2(\rho\cos\theta)(\rho\sin\theta)^2 + (\rho\cos\theta)^2 \\
+    &= 2\rho^3\cos\theta\sin^2\theta + \rho^2\cos^2\theta \\
+    &= 2\rho^3\cos\theta\sin^2\theta + \rho^2\cos^2\theta
+\end{align}
+
+\subsection*{$U_2$ Vektör Alanının Dönüşümü}
+\begin{align}
+    U_2 &= xy + z \\
+    &= (\rho\cos\theta)(\rho\sin\theta) + z \\
+    &= \rho^2\cos\theta\sin\theta + z
+\end{align}
+
+\subsection*{$U_3$ Vektör Alanının Dönüşümü}
+\begin{align}
+    U_3 &= x^2y + z^2y + z \\
+    &= (\rho\cos\theta)^2(\rho\sin\theta) + z^2(\rho\sin\theta) + z \\
+    &= \rho^3\cos^2\theta\sin\theta + \rho z^2\sin\theta + z \\
+    &= \rho^3\cos^2\theta\sin\theta + \rho z^2\sin\theta + z
+\end{align}
+
+\section*{Ödev: Küresel Koordinatlara Uygulama}
+
+Küresel koordinatlarda benzer dönüşüm işlemlerini uygulayın. Küresel koordinat sistemi $(r, \theta, \phi)$ ile tanımlanır, burada:
+\begin{itemize}
+    \item $r$: Orijinden olan uzaklık
+    \item $\theta$: $xy$-düzlemindeki açı (enlem açısı)
+    \item $\phi$: $z$-ekseni ile yapılan açı (boylam açısı)
+\end{itemize}
+
+Küresel ve Kartezyen koordinatlar arasındaki dönüşüm ilişkileri:
+\begin{align}
+    x &= r\sin\phi\cos\theta \\
+    y &= r\sin\phi\sin\theta \\
+    z &= r\cos\phi
+\end{align}
+
+Tersi:
+\begin{align}
+    r &= \sqrt{x^2 + y^2 + z^2} \\
+    \theta &= \arctan\left(\frac{y}{x}\right) \\
+    \phi &= \arccos\left(\frac{z}{\sqrt{x^2 + y^2 + z^2}}\right)
+\end{align}
+
+Ödevinizde, silindirik koordinatlar için yaptığımız işlemlerin benzerini küresel koordinatlar için de yapmanız istenmektedir. Buna şunlar dahildir:
+\begin{enumerate}
+    \item Küresel koordinatlardaki birim vektörlerin Kartezyen birim vektörleri cinsinden ifadesi
+    \item Dönüşüm matrisinin oluşturulması
+    \item Konum vektörünün küresel koordinatlarda ifade edilmesi
+    \item Verilen vektör alanlarının küresel koordinatlara dönüştürülmesi
+\end{enumerate}
+
+\end{document}

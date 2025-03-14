@@ -1,0 +1,381 @@
+\documentclass[11pt,letterpaper,twocolumn]{fenbil}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{mathtools}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{minipage}{0.15\textwidth}
+{
+\includegraphics[width=4cm]{logo/iufizik.png}
+}
+\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.75\textwidth}
+\vspace{5mm}
+\Large{\textbf{FİZİKTE MATEMATİKSEL METOTLAR \\ 13 MART 2025 Eğrisel Koordinatlar ve Diferansiyel Elemanlar}}
+\vspace{3mm}\\
+\large{\textbf{Ad Soyad:} Celal Ekrem Torun - 0411230037}
+\vspace{2mm}\\
+\large{\textbf{DERS:} Prof. Dr. ERTAN GUDEKLI}\newline
+\fontsize{0.35cm}{0.5cm}\selectfont
+\textit{Fizik Bölümü, İstanbul Üniversitesi\newline
+Beyazıt, Fatih, İstanbul, Türkiye\newline
+13 Mart 2025}
+\end{minipage}
+\small
+\end{@twocolumnfalse}]
+
+\hspace{25pt}
+\hspace{25pt}
+\hspace{25pt}
+
+\section{Yay Uzunluğu Elemanı ($ds^2$)}
+
+\subsection{Ortogonal (Dik) Koordinat Sistemlerinde Yay Uzunluğu}
+
+Bir koordinat sistemi ortogonal (dik) ise, yay uzunluğu elemanı şu şekilde yazılır:
+
+\begin{equation}
+ds^2 = g_{11}(du^1)^2 + g_{22}(du^2)^2 + g_{33}(du^3)^2
+\end{equation}
+
+Bu ifadede:
+\begin{itemize}
+\item $g_{11}$, $g_{22}$, $g_{33}$: Metrik tensörün diyagonal elemanları
+\item $du^1$, $du^2$, $du^3$: Koordinat diferansiyelleri
+\end{itemize}
+
+\subsection{Yay Uzunluğunun Genel İfadesi}
+
+Yay uzunluğu elemanı genel olarak şu şekilde yazılır:
+
+\begin{equation}
+ds^2 = g_{ij}du^i du^j
+\end{equation}
+
+Bu ifade, Einstein toplam gösterimi kullanılarak yazılmıştır ve tekrarlanan indisler üzerinden toplam alınacağını gösterir. Açık şekilde yazarsak:
+
+\begin{equation}
+ds^2 = \sum_{i=1}^3 \sum_{j=1}^3 g_{ij}du^i du^j
+\end{equation}
+
+\subsection{Tanjant Vektörleri ve Metrik Bağıntısı}
+
+Tanjant vektörleri ($\vec{T}_i$) kullanarak yay uzunluğunu şöyle ifade ederiz:
+
+\begin{equation}
+ds^2 = \vec{T}_i \cdot \vec{T}_j \, du^i du^j
+\end{equation}
+
+Burada $\vec{T}_i = \frac{\partial \vec{r}}{\partial u^i}$ ifadesi, konum vektörünün ($\vec{r}$) koordinatlara göre kısmi türevlerini temsil eder.
+
+Ayrıca, tanjant vektörleri şu şekilde de yazılabilir:
+
+\begin{equation}
+\vec{T}_i = h_i \vec{e}_i
+\end{equation}
+
+Burada:
+\begin{itemize}
+\item $h_i$: Ölçek faktörü (veya Lamé katsayısı)
+\item $\vec{e}_i$: Lokal birim vektör
+\end{itemize}
+
+Bu durumda yay uzunluğu elemanı:
+
+\begin{equation}
+ds^2 = h_i \vec{e}_i \cdot h_j \vec{e}_j \, du^i du^j = h_i h_j \vec{e}_i \cdot \vec{e}_j \, du^i du^j
+\end{equation}
+
+Ortogonal sistemlerde, $\vec{e}_i \cdot \vec{e}_j = \delta_{ij}$ (Kronecker delta) olduğundan:
+
+\begin{equation}
+ds^2 = h_i^2 (du^i)^2 \quad \text{(i için toplam gösterimi)}
+\end{equation}
+
+Bu, şu anlama gelir:
+\begin{itemize}
+\item Eğer $i = j$ ise, $\vec{e}_i \cdot \vec{e}_j = 1$
+\item Eğer $i \neq j$ ise, $\vec{e}_i \cdot \vec{e}_j = 0$
+\end{itemize}
+
+\subsection{Metrik Tensör ve Ölçek Faktörleri Arasındaki İlişki}
+
+Metrik tensör elemanları ile ölçek faktörleri arasında şu ilişkiler vardır:
+
+\begin{enumerate}
+\item Diyagonal elemanlar (i = j):
+   \begin{equation}
+   g_{ii} = h_i \cdot h_i = h_i^2
+   \end{equation}
+
+\item Diyagonal olmayan elemanlar (i $\neq$ j) (ortogonal sistemlerde):
+   \begin{equation}
+   g_{ij} = h_i h_j \cdot 0 = 0
+   \end{equation}
+
+\item Ölçek faktörleri:
+   \begin{equation}
+   h_i = \pm \sqrt{g_{ii}}
+   \end{equation}
+   
+   Not: Fiziksel nedenlerden dolayı genellikle pozitif değer alınır.
+\end{enumerate}
+
+\section{Silindirik Koordinatlarda Metrik}
+
+Silindirik koordinat sistemi $(\rho, \theta, z)$ için metrik elemanları:
+
+\begin{equation}
+g_{\rho\rho} = h_\rho^2 = 1
+\end{equation}
+
+\begin{equation}
+g_{\theta\theta} = h_\theta^2 = \rho^2
+\end{equation}
+
+\begin{equation}
+g_{zz} = h_z^2 = 1
+\end{equation}
+
+Diğer tüm $g_{ij} = 0$ (i $\neq$ j için, çünkü sistem ortogonaldir)
+
+Ölçek faktörleri:
+\begin{itemize}
+\item $h_\rho = 1$
+\item $h_\theta = \rho$
+\item $h_z = 1$
+\end{itemize}
+
+Cartesian koordinatlardan silindirik koordinatlara dönüşüm:
+\begin{itemize}
+\item $x = \rho \cos \theta$
+\item $y = \rho \sin \theta$
+\item $z = z$
+\end{itemize}
+
+\section{Metrik Tensörü Doğrudan Hesaplama}
+
+Metrik tensör elemanları, konum vektörünün koordinatlara göre türevleri kullanılarak doğrudan hesaplanabilir:
+
+\begin{equation}
+g_{kl} = \frac{\partial \vec{r}}{\partial u^k} \cdot \frac{\partial \vec{r}}{\partial u^l}
+\end{equation}
+
+Konum vektörü Cartesian koordinatlarda:
+
+\begin{equation}
+\vec{r} = x^i \vec{e}_i = x\vec{e}_x + y\vec{e}_y + z\vec{e}_z
+\end{equation}
+
+Bu durumda metrik tensör:
+
+\begin{equation}
+g_{kl} = \frac{\partial x^i}{\partial u^k} \frac{\partial x^j}{\partial u^l} \delta_{ij} = \sum_{i=1}^3 \frac{\partial x^i}{\partial u^k} \frac{\partial x^i}{\partial u^l}
+\end{equation}
+
+Daha açık bir gösterimle:
+
+\begin{equation}
+g_{kl} = \frac{\partial x}{\partial u^k} \frac{\partial x}{\partial u^l} + \frac{\partial y}{\partial u^k} \frac{\partial y}{\partial u^l} + \frac{\partial z}{\partial u^k} \frac{\partial z}{\partial u^l}
+\end{equation}
+
+\section{Silindirik Koordinatlarda Metrik Tensörün Hesaplanması}
+
+Silindirik koordinatlarda metrik tensörü hesaplayalım:
+
+\begin{enumerate}
+\item Kısmi türevleri bulalım:
+   \begin{align}
+   \frac{\partial x}{\partial \rho} &= \cos \theta\\
+   \frac{\partial x}{\partial \theta} &= -\rho \sin \theta\\
+   \frac{\partial x}{\partial z} &= 0\\
+   \frac{\partial y}{\partial \rho} &= \sin \theta\\
+   \frac{\partial y}{\partial \theta} &= \rho \cos \theta\\
+   \frac{\partial y}{\partial z} &= 0\\
+   \frac{\partial z}{\partial \rho} &= 0\\
+   \frac{\partial z}{\partial \theta} &= 0\\
+   \frac{\partial z}{\partial z} &= 1
+   \end{align}
+
+\item Metrik elemanlarını hesaplayalım:
+   
+   \begin{align}
+   g_{\rho\rho} &= \frac{\partial x}{\partial \rho}\frac{\partial x}{\partial \rho} + \frac{\partial y}{\partial \rho}\frac{\partial y}{\partial \rho} + \frac{\partial z}{\partial \rho}\frac{\partial z}{\partial \rho}\\
+   &= \cos^2 \theta + \sin^2 \theta + 0 = 1
+   \end{align}
+   
+   \begin{align}
+   g_{\theta\theta} &= \frac{\partial x}{\partial \theta}\frac{\partial x}{\partial \theta} + \frac{\partial y}{\partial \theta}\frac{\partial y}{\partial \theta} + \frac{\partial z}{\partial \theta}\frac{\partial z}{\partial \theta}\\
+   &= (-\rho \sin \theta)^2 + (\rho \cos \theta)^2 + 0 = \rho^2 \sin^2 \theta + \rho^2 \cos^2 \theta = \rho^2
+   \end{align}
+   
+   \begin{align}
+   g_{zz} &= \frac{\partial x}{\partial z}\frac{\partial x}{\partial z} + \frac{\partial y}{\partial z}\frac{\partial y}{\partial z} + \frac{\partial z}{\partial z}\frac{\partial z}{\partial z}\\
+   &= 0 + 0 + 1 = 1
+   \end{align}
+   
+   \begin{align}
+   g_{\rho\theta} &= \frac{\partial x}{\partial \rho}\frac{\partial x}{\partial \theta} + \frac{\partial y}{\partial \rho}\frac{\partial y}{\partial \theta} + \frac{\partial z}{\partial \rho}\frac{\partial z}{\partial \theta}\\
+   &= \cos \theta \cdot (-\rho \sin \theta) + \sin \theta \cdot (\rho \cos \theta) + 0\\
+   &= -\rho \sin \theta \cos \theta + \rho \sin \theta \cos \theta = 0
+   \end{align}
+\end{enumerate}
+
+Benzer şekilde, $g_{\rho z} = 0$ ve $g_{\theta z} = 0$ olduğunu gösterebiliriz.
+
+\section{Hacim Elemanı (dV)}
+
+\subsection{Genel Hacim Elemanı Formülü}
+
+Üç boyutlu uzayda hacim elemanı, üç diferansiyel konum vektörünün karma çarpımının mutlak değeri olarak ifade edilir:
+
+\begin{equation}
+dV = |\vec{dr}_1 \cdot (\vec{dr}_2 \times \vec{dr}_3)|
+\end{equation}
+
+Burada $\vec{dr}_i = \vec{T}_i du^i$ (toplamı yok) vektörleridir.
+
+Bu ifade, Jacobian determinantı kullanılarak şu şekilde yazılabilir:
+
+\begin{equation}
+dV = \left|\det\left(\frac{\partial(x,y,z)}{\partial(u^1,u^2,u^3)}\right)\right| du^1 du^2 du^3
+\end{equation}
+
+Açık şekilde yazarsak:
+
+\begin{equation}
+dV = \left|\begin{vmatrix} 
+\frac{\partial x}{\partial u^1} & \frac{\partial x}{\partial u^2} & \frac{\partial x}{\partial u^3} \\
+\frac{\partial y}{\partial u^1} & \frac{\partial y}{\partial u^2} & \frac{\partial y}{\partial u^3} \\
+\frac{\partial z}{\partial u^1} & \frac{\partial z}{\partial u^2} & \frac{\partial z}{\partial u^3}
+\end{vmatrix}\right| du^1 du^2 du^3
+\end{equation}
+
+\subsection{Tanjant Vektörleriyle Hacim Elemanı}
+
+Tanjant vektörleri kullanarak hacim elemanı şu şekilde yazılabilir:
+
+\begin{equation}
+dV = |\vec{T}_1 \cdot (\vec{T}_2 \times \vec{T}_3)| du^1 du^2 du^3
+\end{equation}
+
+Ölçek faktörleri kullanılarak:
+
+\begin{align}
+dV &= |h_1 \vec{e}_1 \cdot (h_2 \vec{e}_2 \times h_3 \vec{e}_3)| du^1 du^2 du^3\\
+&= h_1 h_2 h_3 |\vec{e}_1 \cdot (\vec{e}_2 \times \vec{e}_3)| du^1 du^2 du^3
+\end{align}
+
+Ortogonal koordinat sistemlerinde $|\vec{e}_1 \cdot (\vec{e}_2 \times \vec{e}_3)| = 1$ olduğundan:
+
+\begin{equation}
+dV = h_1 h_2 h_3 \, du^1 du^2 du^3 = \sqrt{g} \, du^1 du^2 du^3
+\end{equation}
+
+Burada $g = \det(g_{ij}) = h_1^2 h_2^2 h_3^2$ metrik tensörün determinantıdır.
+
+\subsection{Silindirik Koordinatlarda Hacim Elemanı}
+
+Silindirik koordinatlarda $(\rho, \theta, z)$ hacim elemanı:
+
+\begin{equation}
+dV = h_\rho h_\theta h_z \, d\rho \, d\theta \, dz = 1 \cdot \rho \cdot 1 \, d\rho \, d\theta \, dz = \rho \, d\rho \, d\theta \, dz
+\end{equation}
+
+\section{Alan Elemanı (dS)}
+
+\subsection{İki Boyutlu Alan Elemanı}
+
+İki koordinatın ($u^1$, $u^2$) oluşturduğu yüzeydeki alan elemanı, tanjant vektörlerinin vektörel çarpımı olarak ifade edilir:
+
+\begin{equation}
+d\vec{S} = \frac{\partial \vec{F}}{\partial u^1} \times \frac{\partial \vec{F}}{\partial u^2} \, du^1 du^2
+\end{equation}
+
+Alan elemanının büyüklüğü:
+
+\begin{equation}
+dS = \left|\frac{\partial \vec{F}}{\partial u^1} \times \frac{\partial \vec{F}}{\partial u^2}\right| \, du^1 du^2
+\end{equation}
+
+Bu, determinant formunda yazılabilir:
+
+\begin{equation}
+dS = \left|\begin{vmatrix}
+\frac{\partial x}{\partial u^1} & \frac{\partial x}{\partial u^2} \\
+\frac{\partial y}{\partial u^1} & \frac{\partial y}{\partial u^2}
+\end{vmatrix}\right| \, du^1 du^2
+\end{equation}
+
+Genel olarak, ortogonal koordinatlarda:
+
+\begin{equation}
+dS = h_i h_j \, du^i du^j \quad \text{(i ve j sabit, k hariç)}
+\end{equation}
+
+Burada $i$, $j$ ve $k$ birbirinden farklı indislerdir.
+
+\subsection{Silindirik Koordinatlarda Alan Elemanı}
+
+Silindirik koordinatlarda $(\rho, \theta)$ düzleminde alan elemanı:
+
+\begin{align}
+dS_{\rho\theta} &= \left|\begin{vmatrix}
+\frac{\partial x}{\partial \rho} & \frac{\partial x}{\partial \theta} \\
+\frac{\partial y}{\partial \rho} & \frac{\partial y}{\partial \theta}
+\end{vmatrix}\right| \, d\rho \, d\theta\\
+&= \left|\begin{vmatrix}
+\cos \theta & -\rho \sin \theta \\
+\sin \theta & \rho \cos \theta
+\end{vmatrix}\right| \, d\rho \, d\theta
+\end{align}
+
+\begin{align}
+&= |\rho \cos^2 \theta + \rho \sin^2 \theta| \, d\rho \, d\theta = \rho \, d\rho \, d\theta
+\end{align}
+
+\section{Uygulama Örneği}
+
+Bir integral hesaplama örneği:
+
+\begin{equation}
+A = \iint \sqrt{x^2 + y^2} \, dx \, dy
+\end{equation}
+
+Bu integrali kutupsal koordinatlarda hesaplayalım:
+\begin{itemize}
+\item $x = \rho \cos \theta$
+\item $y = \rho \sin \theta$
+\item $\sqrt{x^2 + y^2} = \rho$
+\item $dx \, dy = \rho \, d\rho \, d\theta$ (Jacobian)
+\end{itemize}
+
+İntegral dönüşümü:
+
+\begin{equation}
+A = \iint \rho \cdot \rho \, d\rho \, d\theta = \iint \rho^2 \, d\rho \, d\theta
+\end{equation}
+
+İntegrasyon sınırları belirlenerek:
+
+\begin{align}
+A &= \int_0^{2\pi} \int_0^r \rho^2 \, d\rho \, d\theta = \int_0^{2\pi} d\theta \int_0^r \rho^2 \, d\rho\\
+&= 2\pi \cdot \left[\frac{\rho^3}{3}\right]_0^r = 2\pi \cdot \frac{r^3}{3} = \frac{2\pi r^3}{3}
+\end{align}
+
+Bu örnekte, Cartesian koordinatlardan kutupsal koordinatlara geçiş yaparak hesaplama kolaylaştırılmıştır.
+
+\end{document}

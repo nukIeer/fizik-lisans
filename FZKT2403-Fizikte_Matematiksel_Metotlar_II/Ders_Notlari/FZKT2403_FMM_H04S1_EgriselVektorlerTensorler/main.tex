@@ -1,0 +1,440 @@
+\documentclass[11pt,letterpaper,twocolumn]{fenbil}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{mathtools}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\twocolumn[
+\begin{@twocolumnfalse}
+\begin{minipage}{0.15\textwidth}
+{
+\includegraphics[width=4cm]{logo/iufizik.png}
+}
+\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.75\textwidth}
+\vspace{5mm}
+\Large{\textbf{FİZİKTE MATEMATİKSEL METOTLAR \\ 13 MART 2025}}
+\vspace{3mm}\\
+\large{\textbf{Ad Soyad:} Celal Ekrem Torun - 0411230037}
+\vspace{2mm}\\
+\large{\textbf{DERS:} Prof. Dr. ERTAN GUDEKLI}\newline
+\fontsize{0.35cm}{0.5cm}\selectfont
+\textit{Fizik Bölümü, İstanbul Üniversitesi\newline
+Beyazıt, Fatih, İstanbul, Türkiye\newline
+13 Mart 2025}
+\end{minipage}
+\small
+\end{@twocolumnfalse}]
+
+\hspace{25pt}
+\hspace{25pt}
+\hspace{25pt}
+
+
+\section{Eğrisel Koordinatlarda Vektörler ve Tensörler}
+
+\subsection{Vektörlerin Gösterimi}
+
+$a$ işareti genel olarak kısmi türevi göstermek için kullanılır (örn. $\frac{\partial f}{\partial x}$).
+
+Bir $\vec{A}$ vektörünü $P(p_1, p_2, p_3)$ koordinat sisteminde aşağıdaki şekillerde yazabiliriz:
+
+\begin{align}
+\vec{A} &= A(v_1, v_2, v_3)\vec{t_1} + A^2(v_1, v_2, v_3)\vec{t_2} + A^3(v_1, v_2, v_3)\vec{t_3} \\
+\text{veya} \\
+\vec{A} &= A^1(v_1, v_2, v_3)\vec{e_1} + A^2(v_1, v_2, v_3)\vec{e_2} + A^3(v_1, v_2, v_3)\vec{e_3}
+\end{align}
+
+$P$ noktasında kesişen teğetlerin oluşturduğu sistemlerin bileşenlerine \textit{kovaryant bileşenler} denir.
+
+\subsection{Tensör Dönüşümleri}
+
+$P(v_1, v_2, v_3)$ koordinat sistemindeki tensör dönüşümleri aşağıdaki gibidir:
+
+\begin{align}
+T^i &= \frac{\partial x^i}{\partial x^m}T^m \\
+T^{ij} &= \frac{\partial x^i}{\partial x^m}\frac{\partial x^j}{\partial x^n}T^{mn} \\
+T^i_j &= \frac{\partial x^i}{\partial x^m}\frac{\partial x^n}{\partial x^j}T^m_n \\
+T_{ij} &= \frac{\partial x^m}{\partial x^i}\frac{\partial x^n}{\partial x^j}T_{mn}
+\end{align}
+ 
+\hspace{25pt}
+\hspace{25pt}
+\hspace{25pt}
+
+Kronecker delta sembolü:
+\begin{align}
+\delta^n_m &= \frac{\partial x^n}{\partial x^m} \\
+&= \begin{cases}
+1, & \text{eğer } n = m \\
+0, & \text{eğer } n \neq m
+\end{cases}
+\end{align}
+
+\subsection{Taban Vektörleri}
+
+$P(u_1, u_2, u_3)$ noktasında, $\vec{t_1}, \vec{t_2}, \vec{t_3}$ ya da $\vec{e_1}, \vec{e_2}, \vec{e_3}$ taban vektörlerinden farklı bir taban vektörleri sistemi de seçilebilir.
+
+$V_{xyz} = \text{sabit}$ koordinat yüzeyi için, $\nabla v$ vektörü, $v_1 = \text{sabit}$ yüzeyinin normali doğrultusundaki vektördür. Buna göre:
+
+\begin{align}
+\vec{E_1} &= \frac{\nabla u_1}{|\nabla u_1|} \\
+\vec{E_2} &= \frac{\nabla u_2}{|\nabla u_2|} \\
+\vec{E_3} &= \frac{\nabla u_3}{|\nabla u_3|}
+\end{align}
+
+$\nabla u_1$, $\nabla u_2$, $\nabla u_3$ ve $\vec{t_1}, \vec{t_2}, \vec{t_3}$ taban vektörleri, bir eşlenik (karşılıklı) vektörler sistemi oluştururlar.
+
+\begin{align}
+\vec{T_1} &= \frac{\nabla u_2 \times \nabla u_3}{\nabla u_1 \cdot (\nabla u_2 \times \nabla u_3)} \\
+\vec{T_2} &= \frac{\nabla u_3 \times \nabla u_1}{\nabla u_1 \cdot (\nabla u_2 \times \nabla u_3)} \\
+\vec{T_3} &= \frac{\nabla u_1 \times \nabla u_2}{\nabla u_1 \cdot (\nabla u_2 \times \nabla u_3)}
+\end{align}
+
+Vektörlerin kovaryant bileşenlerle gösterimi:
+\begin{align}
+\vec{A} &= a_1(u_1, u_2, u_3)\nabla u_1 + a_2(u_1, u_2, u_3)\nabla u_2 + a_3(u_1, u_2, u_3)\nabla u_3 \\
+\text{veya} \\
+\vec{A} &= a_1(u_1, u_2, u_3)\vec{E_1} + a_2(u_1, u_2, u_3)\vec{E_2} + a_3(u_1, u_2, u_3)\vec{E_3}
+\end{align}
+
+\textbf{Önemli Not:} Bir eğrisel koordinat sisteminde, kartezyen koordinat sisteminden farklı olarak tek bir taban değil, iki farklı taban vardır:
+\begin{enumerate}
+    \item $P$ noktasında koordinat eğrilerine çizilen teğetlerin oluşturduğu taban
+    \item $P$ noktasında kesişen $u_1, u_2, u_3 = \text{sabit}$ denklemlerin yüzeylerinin normallerinin oluşturduğu taban
+\end{enumerate}
+
+\section{Eğrisel Koordinatlarda Yay Elemanı}
+
+\subsection{Kartezyen Koordinatlarda Yay Elemanı}
+
+Kartezyen koordinatlarda $P(x, y, z)$ noktasının yer vektörü:
+\begin{align}
+\vec{r} &= x\vec{e_x} + y\vec{e_y} + z\vec{e_z} \\
+&= x^i\vec{e_i}
+\end{align}
+
+Burada:
+\begin{align}
+\vec{e_{\alpha}} &: \text{Kartezyen koordinat taban (baz) vektörleri} \\
+\vec{e_i} &: \text{Eğrisel koordinat taban (baz) vektörleri}
+\end{align}
+
+Kartezyen koordinatlarda yay elemanı:
+\begin{align}
+ds^2 &= |d\vec{r}|^2 = d\vec{r} \cdot d\vec{r} \\
+&= (dx^i\vec{e_i}) \cdot (dx^j\vec{e_j}) \\
+&= dx^i dx^j (\vec{e_i} \cdot \vec{e_j}) \\
+&= dx^i dx^j \delta_{ij} \\
+&= \sum_i (dx^i)^2 \\
+&= dx^2 + dy^2 + dz^2
+\end{align}
+
+\subsection{Eğrisel Koordinatlarda Yay Elemanı}
+
+Eğrisel koordinatlarda konum vektörünün diferansiyeli:
+\begin{align}
+d\vec{r} &= \frac{\partial \vec{r}}{\partial u_i}du_i \\
+&= \frac{\partial \vec{r}}{\partial u_1}du_1 + \frac{\partial \vec{r}}{\partial u_2}du_2 + \frac{\partial \vec{r}}{\partial u_3}du_3
+\end{align}
+
+Yay elemanının karesi:
+\begin{align}
+ds^2 &= |d\vec{r}|^2 = d\vec{r} \cdot d\vec{r} \\
+&= \left(\frac{\partial \vec{r}}{\partial u_i}du_i\right) \cdot \left(\frac{\partial \vec{r}}{\partial u_j}du_j\right) \\
+&= \left(\frac{\partial \vec{r}}{\partial u_i} \cdot \frac{\partial \vec{r}}{\partial u_j}\right)du_i du_j \\
+&= g_{ij}du_i du_j
+\end{align}
+
+Burada $g_{ij}$, metrik tensörün bileşenleridir:
+\begin{align}
+g_{ij} &= \vec{T_i} \cdot \vec{T_j} \\
+&= \frac{\partial \vec{r}}{\partial u_i} \cdot \frac{\partial \vec{r}}{\partial u_j}
+\end{align}
+
+Açık formda yay elemanı:
+\begin{align}
+ds^2 &= g_{ij}du_i du_j \\
+&= g_{11}(du_1)^2 + g_{12}du_1 du_2 + g_{21}du_2 du_1 + g_{22}(du_2)^2 + \cdots \\
+&= g_{11}(du_1)^2 + 2g_{12}du_1 du_2 + g_{22}(du_2)^2 + \cdots
+\end{align}
+
+\subsection{Örnek: Kartezyen Koordinatlarda Metrik Tensör}
+
+Kartezyen koordinatlarda metrik tensör:
+\begin{align}
+g_{ij} = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\end{align}
+
+Bu durumda yay elemanı:
+\begin{align}
+ds^2 &= g_{ij}dx^i dx^j \\
+&= dx^2 + dy^2 + dz^2
+\end{align}
+
+\subsection{Örnek: Silindirik Koordinatlarda Metrik Tensör}
+
+Silindirik koordinatlar $(r, \theta, z)$ için dönüşüm bağıntıları:
+\begin{align}
+x &= r\cos\theta \\
+y &= r\sin\theta \\
+z &= z
+\end{align}
+
+Konum vektörünün kısmi türevleri:
+\begin{align}
+\frac{\partial \vec{r}}{\partial r} &= \cos\theta\vec{e_x} + \sin\theta\vec{e_y} \\
+\frac{\partial \vec{r}}{\partial \theta} &= -r\sin\theta\vec{e_x} + r\cos\theta\vec{e_y} \\
+\frac{\partial \vec{r}}{\partial z} &= \vec{e_z}
+\end{align}
+
+Metrik tensör bileşenleri:
+\begin{align}
+g_{rr} &= \frac{\partial \vec{r}}{\partial r} \cdot \frac{\partial \vec{r}}{\partial r} = \cos^2\theta + \sin^2\theta = 1 \\
+g_{\theta\theta} &= \frac{\partial \vec{r}}{\partial \theta} \cdot \frac{\partial \vec{r}}{\partial \theta} = r^2\sin^2\theta + r^2\cos^2\theta = r^2 \\
+g_{zz} &= \frac{\partial \vec{r}}{\partial z} \cdot \frac{\partial \vec{r}}{\partial z} = 1 \\
+g_{r\theta} = g_{\theta r} &= \frac{\partial \vec{r}}{\partial r} \cdot \frac{\partial \vec{r}}{\partial \theta} = -r\sin\theta\cos\theta + r\sin\theta\cos\theta = 0 \\
+g_{rz} = g_{zr} &= \frac{\partial \vec{r}}{\partial r} \cdot \frac{\partial \vec{r}}{\partial z} = 0 \\
+g_{\theta z} = g_{z\theta} &= \frac{\partial \vec{r}}{\partial \theta} \cdot \frac{\partial \vec{r}}{\partial z} = 0
+\end{align}
+
+Silindirik koordinatlarda metrik tensör:
+\begin{align}
+g_{ij} = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & r^2 & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\end{align}
+
+Silindirik koordinatlarda yay elemanı:
+\begin{align}
+ds^2 = dr^2 + r^2d\theta^2 + dz^2
+\end{align}
+
+\maketitle
+
+\section{Koordinat Dönüşümleri ve Ayar Teorisi}
+
+\subsection{Ayar Dönüşümleri}
+
+\textbf{Dikkat:} Bu kısımdan sınav sorusu çıkacak!
+
+Ayar dönüşümleri, fiziksel alan teorilerinde önemli bir matematiksel yapıdır. Bir ayar dönüşümü, fiziksel sistemin belirli simetrilere göre değişmezliğini ifade eder. 
+
+\subsubsection{Galileo Dönüşümleri}
+
+Klasik mekanikte, iki referans sistemi arasındaki dönüşümler Galileo dönüşümleriyle verilir:
+\begin{align}
+x' &= x - vt \\
+y' &= y \\
+z' &= z \\
+t' &= t
+\end{align}
+
+Burada $v$, referans sistemlerinin birbirine göre sabit hızıdır.
+
+\subsubsection{Lorentz Dönüşümleri}
+
+Özel görelilikte, uzay-zaman koordinatları arasındaki dönüşümler Lorentz dönüşümleriyle verilir:
+\begin{align}
+x' &= \gamma(x - vt) \\
+y' &= y \\
+z' &= z \\
+t' &= \gamma\left(t - \frac{vx}{c^2}\right)
+\end{align}
+
+Burada $\gamma = \frac{1}{\sqrt{1-v^2/c^2}}$ Lorentz faktörüdür.
+
+Eğer bir fiziksel sistem Lorentz dönüşümleri altında değişmezse, o sistem Lorentz değişmezdir ve özel görelilik ilkesine uyar.
+
+\section{Eğrisel Koordinatlarda Yay Elemanı}
+
+Kartezyen koordinatlarda yay elemanı, Pisagor teoremi ile kolayca yazılabilir:
+\begin{equation}
+ds^2 = dx^2 + dy^2 + dz^2
+\end{equation}
+
+Bu ifadeyi eğrisel koordinatlarda nasıl yazacağımızı inceleyelim:
+
+Bir konum vektörünün diferansiyeli şöyle yazılır:
+\begin{equation}
+d\vec{r} = \frac{\partial \vec{r}}{\partial u_i}du_i = \frac{\partial \vec{r}}{\partial u_1}du_1 + \frac{\partial \vec{r}}{\partial u_2}du_2 + \frac{\partial \vec{r}}{\partial u_3}du_3
+\end{equation}
+
+Burada $\frac{\partial \vec{r}}{\partial u_i}$ ifadesi kısmi türevi temsil eder.
+
+Diferansiyel yay elemanının karesi:
+\begin{align}
+|d\vec{r}|^2 &= d\vec{r} \cdot d\vec{r} \\
+&= \left(\frac{\partial \vec{r}}{\partial u_i}du_i\right) \cdot \left(\frac{\partial \vec{r}}{\partial u_j}du_j\right) \\
+&= \frac{\partial \vec{r}}{\partial u_i} \cdot \frac{\partial \vec{r}}{\partial u_j} du_i du_j
+\end{align}
+
+Metrik tensörü tanımlayalım:
+\begin{equation}
+g_{ij} = \frac{\partial \vec{r}}{\partial u_i} \cdot \frac{\partial \vec{r}}{\partial u_j} = \vec{T}_i \cdot \vec{T}_j
+\end{equation}
+
+Burada $\vec{T}_i$ taban vektörleridir ve $\vec{T}_i = \frac{\partial \vec{r}}{\partial u_i}$ olarak tanımlanır.
+
+Yay elemanı artık şöyle yazılabilir:
+\begin{equation}
+ds^2 = g_{ij} du_i du_j
+\end{equation}
+
+Bu, tensör notasyonunda Einstein toplam kuralı kullanılarak yazılmıştır. Açık şekilde:
+\begin{equation}
+ds^2 = g_{11}(du_1)^2 + g_{12}du_1 du_2 + g_{21}du_2 du_1 + g_{22}(du_2)^2 + \ldots
+\end{equation}
+
+Metrik tensörü $g_{ij}$, $3 \times 3$ bir matris şeklinde gösterilebilir:
+\begin{equation}
+g_{ij} = 
+\begin{pmatrix}
+g_{11} & g_{12} & g_{13} \\
+g_{21} & g_{22} & g_{23} \\
+g_{31} & g_{32} & g_{33}
+\end{pmatrix}
+\end{equation}
+
+Kartezyen koordinatlar için metrik tensörü birim matristir:
+\begin{equation}
+g_{ij} = 
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\end{equation}
+
+\section{Özel Koordinat Sistemleri ve Metrik Tensörler}
+
+\subsection{Minkowski Uzay-Zamanı}
+
+Özel görelilik için Minkowski metriği:
+\begin{equation}
+g_{\mu\nu} = 
+\begin{pmatrix}
+-1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\end{equation}
+
+\subsection{Eliptik Koordinatlar}
+
+Eliptik koordinatlarda metrik tensörü:
+\begin{equation}
+g_{ij} = 
+\begin{pmatrix}
+-1 & 0 & 0 & 0 \\
+0 & a^2 & 0 & 0 \\
+0 & 0 & b^2 & 0 \\
+0 & 0 & 0 & c^2
+\end{pmatrix}
+\end{equation}
+
+Burada $a$, $b$ ve $c$ elipsin yarı eksenleridir.
+
+\section{Einstein'in Alan Denklemleri}
+
+\subsection{Genel Görelilik Teorisinin Eylemi}
+
+Einstein'in alan denklemlerinin temelinde yatan eylem:
+\begin{equation}
+S = \int d^4x \sqrt{-g} R
+\end{equation}
+
+Burada:
+\begin{itemize}
+\item $g$: Metrik tensörünün determinantı
+\item $R$: Ricci skaleri (Riemann eğrilik tensörünün büzülmüş hali)
+\end{itemize}
+
+Bu eylem, uzay-zamanın geometrisini tanımlar. Riemann tensörü, uzay-zamanın eğriliğini ölçer ve iki kez büzülerek skaler bir büyüklük olan $R$ elde edilir.
+
+\subsection{Eylem İlkesi ve Varyasyon}
+
+Fizikteki en temel ilkelerden biri, eylemin varyasyonunun sıfır olmasıdır:
+\begin{equation}
+\delta S = 0
+\end{equation}
+
+Eylemin varyasyonu alındığında:
+\begin{equation}
+\delta S = \int d^4x \left[\delta(g^{ij}R_{ij})\sqrt{-g} + R\delta\sqrt{-g}\right]
+\end{equation}
+
+Varyasyonel hesaplamalar sonucunda:
+\begin{equation}
+\delta S = \int d^4x \sqrt{-g} \left[g^{ij}\delta R_{ij} + R_{ij}\delta g^{ij} + \frac{1}{2}g_{ij}R\delta g^{ij}\right]
+\end{equation}
+
+Bu varyasyonel hesaplamaların detaylı analizi, Einstein'in aşağıdaki denklemlerini verir:
+\begin{equation}
+R_{ij} - \frac{1}{2}Rg_{ij} = 0
+\end{equation}
+
+Bu denklem, statik bir vakum uzay-zamanı için geçerlidir. Madde varlığında, denklem şöyle genişler:
+\begin{equation}
+R_{ij} - \frac{1}{2}Rg_{ij} = 8\pi G T_{ij}
+\end{equation}
+
+Burada $T_{ij}$, enerji-momentum tensörüdür ve madde-enerji dağılımını tanımlar:
+\begin{equation}
+T_{ij} = (\rho + p)u_i u_j + pg_{ij} + q_i u_j + q_j u_i
+\end{equation}
+
+Burada:
+\begin{itemize}
+\item $\rho$: Enerji yoğunluğu
+\item $p$: Basınç
+\item $u_i$: 4-hız vektörü
+\item $q_i$: Isı akış vektörü
+\end{itemize}
+
+\subsection{Einstein Denklemlerinin Kozmolojik Uygulamaları}
+
+Einstein denklemleri, evrenin makro ölçekteki yapısını ve dinamiğini tanımlar. Bu denklemler kullanılarak:
+\begin{itemize}
+\item Evrenin yoğunluğu
+\item Evrenin genişleme hızı (Hubble sabiti)
+\item Evrenin yaşı
+\item Kozmik basınç
+\end{itemize}
+gibi parametreler hesaplanabilir.
+
+\section{Tarihsel Gelişim}
+
+Einstein, genel görelilik teorisini 1915 yılında tamamladı ve Kasım ayında Berlin Bilimler Akademisi'nde sundu. Aynı dönemde, ünlü matematikçi David Hilbert de benzer denklemleri çıkarıyordu. Einstein ve Hilbert arasında bir öncelik tartışması oluşmuş olsa da, Einstein'in fiziksel sezgisi ve geometrik yorumu, teorinin gelişiminde belirleyici olmuştur.
+
+Einstein başlangıçta denklemlerine bir "kozmolojik sabit" ($\Lambda$) ekleyerek durağan bir evren modeli oluşturmaya çalışmıştır:
+\begin{equation}
+R_{ij} - \frac{1}{2}Rg_{ij} + \Lambda g_{ij} = 8\pi G T_{ij}
+\end{equation}
+
+Ancak, Edwin Hubble'ın 1929'da evrenin genişlediğini keşfetmesiyle, Einstein bu terimi "hayatımın en büyük hatası" olarak nitelendirmiştir. İlginç bir şekilde, günümüzde kozmolojik sabit terimi, karanlık enerjiyi açıklamak için tekrar önem kazanmıştır.
+
+Arthur Eddington, 1919'daki güneş tutulması sırasında yaptığı gözlemlerle ışığın Güneş'in yakınından geçerken büküldüğünü göstererek Einstein'in teorisini doğrulamıştır. Bu, teorinin ilk önemli deneysel kanıtı olmuştur.
+
+Genel görelilik günümüzde, GPS sistemlerinden karadelik görüntülemesine, gravitasyonel dalga tespitinden kozmolojik modellere kadar birçok alanda kullanılmaktadır.
+
+
+\end{document}
