@@ -70,13 +70,7 @@ Projeye katkıda bulunmak isterseniz, aşağıdaki adımları izleyerek **pull r
 
 Yardımcı olmak için her zaman açığım! 🌟
 
----
 
-## 📞 İletişim
-
-**Ekrem Torun**  
-İstanbul Üniversitesi, Fizik Bölümü
----
 
 ## 📜 Lisans
 
@@ -90,7 +84,6 @@ Bu proje, **MIT Lisansı** altında lisanslanmıştır. Daha fazla bilgi için [
 |------------------|-------------------------------------------------------|
 | `README.md`      | Proje hakkında genel bilgi ve rehber                 |
 | `LICENSE`        | Projenin lisans bilgileri                             |
-| `SETUP.ps1`      | Windows için kurulumu otomatikleştiren PowerShell betiği |
 
 ---
 
@@ -98,15 +91,12 @@ Bu proje, **MIT Lisansı** altında lisanslanmıştır. Daha fazla bilgi için [
 
 Projede kullanılan bazı görsel ögeler, derslerin görsel anlatımlarını ve yazılımlarını içerebilir. Bunlar, ders içeriklerinin daha verimli bir şekilde anlaşılmasını sağlayan araçlardır.
 
-![Optik Laboratuvarı](https://upload.wikimedia.org/wikipedia/commons/a/a6/Optik_Devre.svg)
-
 ---
 
 ## 🔗 İlgili Kaynaklar
 
-- [İstanbul Üniversitesi Fizik Bölümü Resmi Web Sitesi](https://www.istanbul.edu.tr/)
-- [Fizik Eğitimi ve Araştırma Yazılımları](https://www.example.com)
-
+- [İstanbul Üniversitesi Resmi Web Sitesi](https://www.istanbul.edu.tr/)
+- 
 ---
 
 **Not:** Bu proje sürekli olarak güncellenmektedir. Geri bildirimleriniz ve önerileriniz bizim için çok değerlidir! 💡
