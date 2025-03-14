@@ -2,7 +2,7 @@
 
 ![IU Logo](https://upload.wikimedia.org/wikipedia/commons/6/64/İstanbul_Üniversitesi_logo.svg)
 
-**İstanbul Üniversitesi Fizik Bölümü 2. Sınıf öğrencisi Ekrem Torun tarafından hazırlanan bu repository**, Fizik Bölümü'nün bahar dönemi ders notlarını, ödev çözümlerini, sınav hazırlıklarını ve diğer ders materyallerini içermektedir. Proje, derslerin derli toplu bir şekilde erişilebilmesini ve öğrencilerin ihtiyaç duydukları bilgilere hızlıca ulaşabilmesini sağlamayı amaçlamaktadır.
+**İstanbul Üniversitesi Fizik Bölümünden Ekrem Torun tarafından hazırlanan bu repository**, Fizik Bölümü'nün bahar dönemi ders notlarını, ödev çözümlerini, sınav hazırlıklarını ve diğer ders materyallerini içermektedir. Proje, derslerin derli toplu bir şekilde erişilebilmesini ve öğrencilerin ihtiyaç duydukları bilgilere hızlıca ulaşabilmesini sağlamayı amaçlamaktadır.
 
 ---
 
@@ -24,9 +24,21 @@ Bahar dönemi dersleri şu şekilde sıralanmıştır:
 ## 🗂️ Repo Yapısı
 
 Bu repository'nin yapısı, derslerin her birine özel dosyalar ve klasörler içerir. Aşağıda genel dizin yapısını bulabilirsiniz:
-
-IU-Fizik-2-Bahar/ ├── 00-Genel/ │ ├── Akademik_Takvim/ │ ├── Ders_Programi/ │ └── Yönetmelikler/ ├── FZKT2401-Klasik_Mekanik/ │ ├── Ders_Notlari/ │ ├── Odevler/ │ ├── Sinavlar/ │ └── Kaynaklar/ ├── FZKT2402-Modern_Fizik/ ├── FZKT2403-Fizikte_Matematiksel_Metotlar_II/ ├── FZKT2404-Elektronik_I_-_Analog_Elektronik/ ├── FZKT2412-Akustik_Fizik/ ├── FZKT2405-Optik_Laboratuvari/
-
+IU-Fizik-2-Bahar/
+├── 00-Genel/
+│   ├── Akademik_Takvim/
+│   ├── Ders_Programi/
+│   └── Yönetmelikler/
+├── FZKT2401-Klasik_Mekanik/
+│   ├── Ders_Notlari/
+│   ├── Odevler/
+│   ├── Sinavlar/
+│   └── Kaynaklar/
+├── FZKT2402-Modern_Fizik/
+├── FZKT2403-Fizikte_Matematiksel_Metotlar_II/
+├── FZKT2404-Elektronik_I_-_Analog_Elektronik/
+├── FZKT2412-Akustik_Fizik/
+└── FZKT2405-Optik_Laboratuvari/
 
 ### 📁 Her Ders İçin Klasör Yapısı:
 
@@ -62,9 +74,7 @@ Yardımcı olmak için her zaman açığım! 🌟
 ## 📞 İletişim
 
 **Ekrem Torun**  
-İstanbul Üniversitesi, Fizik Bölümü, 2. Sınıf  
-E-posta: [ekrem.torun@istanbul.edu.tr](mailto:ekrem.torun@istanbul.edu.tr)
-
+İstanbul Üniversitesi, Fizik Bölümü
 ---
 
 ## 📜 Lisans
