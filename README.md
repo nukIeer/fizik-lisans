@@ -24,6 +24,7 @@ Bahar dönemi dersleri şu şekilde sıralanmıştır:
 ## 🗂️ Repo Yapısı
 
 Bu repository'nin yapısı, derslerin her birine özel dosyalar ve klasörler içerir. Aşağıda genel dizin yapısını bulabilirsiniz:
+```
 -IU-Fizik-2-Bahar/
 -├── 00-Genel/
 -│   ├── Akademik_Takvim/
@@ -39,7 +40,7 @@ Bu repository'nin yapısı, derslerin her birine özel dosyalar ve klasörler i�
 -├── FZKT2404-Elektronik_I_-_Analog_Elektronik/
 -├── FZKT2412-Akustik_Fizik/
 -└── FZKT2405-Optik_Laboratuvari/
-
+```
 ### 📁 Her Ders İçin Klasör Yapısı:
 
 - **Ders Notları:** LaTeX kaynak dosyaları ve derlenmiş PDF'ler
