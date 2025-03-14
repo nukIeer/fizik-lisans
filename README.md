@@ -1,6 +1,6 @@
 # İstanbul Üniversitesi Fizik Bölümü - 2. Sınıf Bahar Dönemi
 
-![IU Logo](https://upload.wikimedia.org/wikipedia/commons/6/64/İstanbul_Üniversitesi_logo.svg)
+![IU Logo](https://cdn.istanbul.edu.tr/FileHandler2.ashx?f=008.fen-bilimleri-enstitusu.png)
 
 **İstanbul Üniversitesi Fizik Bölümünden Ekrem Torun tarafından hazırlanan bu repository**, Fizik Bölümü'nün bahar dönemi ders notlarını, ödev çözümlerini, sınav hazırlıklarını ve diğer ders materyallerini içermektedir. Proje, derslerin derli toplu bir şekilde erişilebilmesini ve öğrencilerin ihtiyaç duydukları bilgilere hızlıca ulaşabilmesini sağlamayı amaçlamaktadır.
 
