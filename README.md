@@ -71,12 +71,6 @@ Projeye katkıda bulunmak isterseniz, aşağıdaki adımları izleyerek **pull r
 
 Yardımcı olmak için her zaman açığım! 🌟
 
-
-
-## 📜 Lisans
-
-Bu proje, **MIT Lisansı** altında lisanslanmıştır. Daha fazla bilgi için [LICENSE](LICENSE) dosyasına bakabilirsiniz.
-
 ---
 
 ## 📂 Dizin ve İlgili Dosyalar
