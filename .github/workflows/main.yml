@@ -12,6 +12,9 @@ jobs:
   kontrol:
     runs-on: ubuntu-latest
     steps:
+      - name: Repository'yi Al
+        uses: actions/checkout@v4
+
       - name: Dosya Listesini Al 
         id: file_list
         uses: actions/github-script@v7
@@ -265,9 +268,9 @@ def main():
 
 if __name__ == "__main__":
     main()
-EOF
-          chmod +x .github/scripts/ders_notlari_kontrol.py
-          python .github/scripts/ders_notlari_kontrol.py
+EOT
+          chmod +x ders_notlari_kontrol.py
+          python ders_notlari_kontrol.py
         
       - name: Sonuçları Artifacts Olarak Kaydet
         uses: actions/upload-artifact@v4
