@@ -3,6 +3,7 @@
 
 import os
 import re
+import json
 import pandas as pd
 from tabulate import tabulate
 from colorama import Fore, Style, init
@@ -11,22 +12,19 @@ from colorama import Fore, Style, init
 init(autoreset=True)
 
 def main():
+    # JSON dosyadan dosya listesini oku
+    with open('file_list.json', 'r') as f:
+        file_list = json.load(f)
+    
     # Ders kodu düzeni (örn: FZKT2402_MF_H03_S1_KutleOrani)
     pattern = r"([A-Z]+\d+)_([A-Z]+)_H(\d+)(?:_S(\d+))?(?:_([A-Za-z0-9]+))?"
-    
-    # Dosya yollarını topla
-    all_files = []
-    for root, dirs, files in os.walk("."):
-        if ".git" in root or ".github" in root:
-            continue
-        for file in files:
-            all_files.append(os.path.join(root, file))
     
     # Dosya bilgilerini çıkar
     file_data = []
     
-    for filepath in all_files:
-        filename = os.path.basename(filepath)
+    for file_info in file_list:
+        filename = file_info['name']
+        filepath = file_info['path']
         match = re.match(pattern, filename)
         
         if match:
@@ -183,10 +181,11 @@ def main():
     print(f"\n{Fore.CYAN}📊 Rapor 'rapor.md' dosyasına kaydedildi.")
     
     # GitHub Actions çıktısı için
-    with open(os.environ.get('GITHUB_OUTPUT', '/dev/null'), 'a') as fh:
-        sorun_sayisi = len(sorunlar)
-        fh.write(f'sorun_sayisi={sorun_sayisi}\n')
-        fh.write(f'rapor_olusturuldu=true\n')
+    if 'GITHUB_OUTPUT' in os.environ:
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+            sorun_sayisi = len(sorunlar)
+            fh.write(f'sorun_sayisi={sorun_sayisi}\n')
+            fh.write(f'rapor_olusturuldu=true\n')
 
 if __name__ == "__main__":
     main()
