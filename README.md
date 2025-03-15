@@ -15,9 +15,7 @@
 
 ## 🔍 Genel Bakış
 
-**İstanbul Üniversitesi Fizik Bölümü öğrencisi Ekrem Torun** tarafından hazırlanan bu repository, bölümün ders notlarını, ödev çözümlerini, sınav hazırlık materyallerini ve diğer akademik kaynakları içermektedir. Bu proje, fizik öğrencilerinin akademik yolculuklarında ihtiyaç duydukları kaynaklara kolay erişim sağlamayı amaçlamaktadır.
-
-> *"Fizik, doğanın dilini anlamaktır. Bu repository, o dili öğrenme yolculuğunuzda size rehberlik edecek."*
+**İstanbul Üniversitesi Fizik Bölümü'nden Ekrem Torun** tarafından hazırlanan bu repository, bölümün ders notlarını, ödev çözümlerini, sınav hazırlık materyallerini ve diğer akademik kaynakları içermektedir. Bu proje, fizik öğrencilerinin akademik yolculuklarında ihtiyaç duydukları kaynaklara kolay erişim sağlamayı amaçlamaktadır.
 
 ---
 
@@ -220,9 +218,7 @@ Tüm katkılar incelenecek ve değerlendirilecektir. Küçük düzeltmeler bile 
 
 <div align="center">
   
-[![Email](https://img.shields.io/badge/Email-ekrem.torun%40istanbul.edu.tr-blue?style=for-the-badge&logo=gmail)](mailto:ekrem.torun@istanbul.edu.tr)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ekrem_Torun-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/nucIear)
-[![Twitter](https://img.shields.io/badge/Twitter-@nucIear-blue?style=for-the-badge&logo=twitter)](https://twitter.com/nucIear)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ekrem_Torun-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/mxster)
 
 </div>
 
@@ -244,41 +240,10 @@ Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır. Detaylar için lis
 ---
 
 <div align="center">
-  <p><i>Bu repository, İstanbul Üniversitesi Fizik Bölümü öğrencileri için hazırlanmıştır.</i></p>
+  <p><i>Bu repository, Fizik Bölümü öğrencileri için hazırlanmıştır.</i></p>
   <p>⭐ Beğendiyseniz yıldız vermeyi unutmayın! ⭐</p>
   
   ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=nucIear.IU-Fizik-Dersleri)
 </div>
-</qodoArtifact>
 
-I've created a professional and visually appealing README file for your physics department repository. Here are the key improvements:
 
-### What's New in This README:
-
-1. **Modern Visual Design**:
-   - Added badges (stars, forks, license, etc.)
-   - Included a visitor counter
-   - Created centered header with university logo
-   - Used emoji icons throughout for visual appeal
-
-2. **Better Organization**:
-   - Structured course tables with clickable links to folders
-   - Added the new course (FZKT1201 - Elektrik ve Manyetizma) in its own section
-   - Improved repository structure visualization with emoji icons
-
-3. **Enhanced Content**:
-   - Added a motivational quote
-   - Included detailed "How to Use" instructions
-   - Created a comprehensive contribution guide
-   - Added contact information with clickable badges
-   - Included GitHub statistics visualization
-
-4. **Professional Elements**:
-   - Formatted important dates in a centered table
-   - Added useful links section with university resources
-   - Included license information
-   - Added a footer with visitor tracking
-
-The README now has a more professional, modern GitHub appearance while maintaining all the original information about your courses and repository structure. The design is clean, informative, and visually engaging, which should make it more appealing to visitors and collaborators.
-
-Would you like me to make any specific adjustments to this README?
