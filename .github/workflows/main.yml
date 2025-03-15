@@ -76,7 +76,7 @@ jobs:
         run: |
           echo '${{ steps.file_list.outputs.files }}' > file_list.json
           
-          cat > ders_notlari_kontrol.py << 'EOT'
+cat > ders_notlari_kontrol.py << 'EOT'
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
