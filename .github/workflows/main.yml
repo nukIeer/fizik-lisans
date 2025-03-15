@@ -74,7 +74,7 @@ jobs:
       - name: Python Betiğini İndir
         run: |
           mkdir -p .github/scripts
-          curl -o .github/scripts/ders_notlari_kontrol.py https://raw.githubusercontent.com/${{ github.repository }}/main/.github/scripts/ders_notlari_kontrol.py
+          curl -o .github/scripts/ders_notlari_kontrol.py https://raw.githubusercontent.com/${{ github.repository }}/master/.github/scripts/ders_notlari_kontrol.py
           chmod +x .github/scripts/ders_notlari_kontrol.py
 
       - name: Ders Notları Kontrolü
