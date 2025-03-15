@@ -1,0 +1,200 @@
+\documentclass[11pt,letterpaper]{fenbil}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel}
+\usepackage{amsmath}
+\usepackage{circuitikz}
+\usepackage{pgfplots}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in} % Set margins for better formatting
+\usepackage{amsfonts} % For math fonts
+\usepackage{graphicx} % For including images (if needed)
+\usepackage{setspace} % For line spacing
+\usepackage{times} % Use Times New Roman font
+
+\title{\textbf{Sinüzoidal Dalgalar, Frekans, Dijital ve Testere Dişi Dalgalar}}
+\author{Roo} % Added author
+\date{\today} % Added date
+
+\begin{document}
+
+\maketitle
+\begin{spacing}{1.2} % Adjust line spacing
+
+\begin{abstract}
+Bu makalede, sinüzoidal, dikdörtgen ve testere dişi dalgaların temel özellikleri, frekans, periyot, açısal frekans, faz farkı kavramları, etkin değer (RMS) kavramı ve dijital devrelerdeki kullanımlarını incelenmektedir. Ayrıca, ortalama gerilim ve periyot hesaplamalarına da değinilmektedir. Makalede, temel kavramların yanı sıra, örnek sorular ve çözümleri ile konunun daha iyi anlaşılması hedeflenmektedir.
+\end{abstract}
+
+\section*{Giriş}
+Bu makalede, sinüzoidal, dikdörtgen ve testere dişi dalgaların temel özelliklerini, frekans, periyot, açısal frekans, faz farkı kavramlarını, etkin değer (RMS) kavramını ve dijital devrelerdeki kullanımlarını inceleyeceğiz. Ayrıca, ortalama gerilim ve periyot hesaplamalarına da değineceğiz.
+
+\section*{Temel Kavramlar}
+
+\subsection*{Periyot ve Frekans}
+\begin{itemize}
+\item \textbf{Periyot (T)}: Dalganın bir tam döngüsünü tamamlaması için geçen süredir. Birimi saniyedir (s).
+\item \textbf{Frekans (f)}: Birim zamandaki döngü sayısıdır. Birimi Hertz (Hz) dir.
+\end{itemize}
+
+Periyot ve frekans arasındaki ilişki:
+\[
+f = \frac{1}{T}
+\]
+
+\subsection*{Ortalama Gerilim}
+Bir periyot boyunca bir sinyalin ortalama gerilimi ($V_{ort}$), sinyalin zamanla integralinin periyoda bölünmesiyle hesaplanır:
+\[
+V_{ort} = \frac{1}{T} \int_{0}^{T} v(t) \, dt
+\]
+
+\subsection*{Etkin Değer (RMS)}
+Etkin değer (Root Mean Square - RMS), bir alternatif akım (AC) sinyalinin, aynı direnç üzerinde aynı miktarda ısı üreten bir doğru akım (DC) gerilimi veya akımıdır. Sinüzoidal bir dalga için etkin değer, genliğin $\frac{1}{\sqrt{2}}$ katıdır.
+
+\subsection*{Sinüzoidal Dalga}
+Sinüzoidal dalga, matematiksel olarak şu şekilde ifade edilir:
+\[
+x(t) = A \sin(\omega t + \phi)
+\]
+Burada:
+\begin{itemize}
+\item $A$: Genlik (Amplitude)
+\item $\omega$: Açısal frekans (rad/s)
+\item $\phi$: Faz açısı (rad)
+\end{itemize}
+
+\section*{Açısal Frekans ve Faz Farkı}
+\subsection*{Açısal Frekans}
+Açısal frekans ($\omega$), birim zamandaki radyan cinsinden açısal yer değiştirmeyi ifade eder:
+\[
+\omega = 2\pi f = \frac{2\pi}{T}
+\]
+Açısal frekans, sinyalin ne kadar hızlı değiştiğini gösterir.
+
+\subsection*{Faz Farkı}
+Faz farkı ($\phi$), iki sinyalin zamanlaması arasındaki farkı ifade eder. Aynı frekanstaki iki sinyal, faz farkı nedeniyle birbirlerine göre kaymış olabilir. Faz farkı, radyan veya derece cinsinden ölçülür.
+
+\section*{Sinüzoidal Dalganın Türevi}
+Sinüzoidal dalganın zamana göre türevi:
+\[
+\frac{dx(t)}{dt} = A\omega \cos(\omega t + \phi)
+\]
+
+\section*{Dalga Şekilleri}
+\subsection*{Sinüzoidal Dalga}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    domain=0:2*pi,
+    samples=100,
+    width=10cm,
+    height=5cm,
+    xlabel={Zaman (t)},
+    ylabel={Genlik},
+    xtick={0, pi/2, pi, 3*pi/2, 2*pi},
+    xticklabels={0, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$},
+    ytick={-1, 0, 1},
+    grid=major,
+    axis lines=middle,
+    axis line style={<->},
+    xmin=0, xmax=2*pi,
+    ymin=-1.2, ymax=1.2
+]
+\addplot[blue, thick] {sin(deg(x))};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Dikdörtgen Dalgalar}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    domain=0:4,
+    samples=100,
+    width=10cm,
+    height=5cm,
+    xlabel={Zaman (t)},
+    ylabel={Genlik},
+    xtick={0, 1, 2, 3, 4},
+    ytick={0, 1},
+    grid=major,
+    ymin=-0.1, ymax=1.1,
+    axis lines=middle,
+    axis line style={<->},
+    xmin=0, xmax=4
+]
+\addplot[red, thick, draw=red, samples at={0,1,1,2,2,3,3,4}] {1};
+\addplot[red, thick, draw=red, samples at={0,1,1,2,2,3,3,4}] {0};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Testere Dişi Dalgalar}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    domain=0:100,
+    samples=100,
+    width=10cm,
+    height=5cm,
+    xlabel={Zaman (t)},
+    ylabel={Genlik},
+    xtick={0, 25, 50, 75, 100},
+    ytick={0, 25, 50, 75, 100},
+    grid=major,
+    ymin=-0.1, ymax=100.1,
+    axis lines=middle,
+    axis line style={<->},
+    xmin=0, xmax=100
+]
+\addplot[green, thick] {x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\section*{Dikdörtgen Dalgalar}
+\subsection*{Tanım}
+Dikdörtgen dalga, iki farklı genlik değeri arasında (genellikle 0 ve 1) ani geçişler gösteren bir sinyal türüdür.
+
+\subsection*{Dijital Devrelerde Kullanımı}
+Dikdörtgen dalgalar, dijital devrelerde temel sinyal türüdür. 0 ve 1 değerleri, dijital devrelerin mantıksal durumlarını (örneğin, düşük ve yüksek voltaj seviyeleri) temsil eder. Bu sayede, dijital devreler mantıksal işlemleri (VE, VEYA, DEĞİL vb.) gerçekleştirebilir.
+
+\section*{Testere Dişi Dalgalar}
+\subsection*{Tanım}
+Testere dişi dalga, zamanla doğrusal olarak artan veya azalan bir sinyal türüdür.
+
+\subsection*{Kullanım Alanları}
+Testere dişi dalgalar, osiloskoplar, zamanlayıcılar ve analog-dijital dönüştürücüler gibi birçok uygulamada kullanılır.
+
+\section*{Sonuç}
+Bu makalede, sinüzoidal, dikdörtgen ve testere dişi dalgaların temel özellikleri ve dijital devrelerdeki kullanımları incelenmiştir. Açısal frekans, faz farkı, ortalama gerilim, etkin değer (RMS) ve periyot kavramları, elektronik ve iletişim sistemlerinin anlaşılması için önemlidir.
+
+\section*{Örnek Sorular ve Çözümleri}
+
+\subsection*{Örnek Soru 1}
+\begin{itemize}
+\item \textbf{Soru:} $T = 2\pi$ olan ve $v(t) = V_m \sin(2t)$ şeklinde verilen bir sinyalin etkin değerini hesaplayınız.
+\item \textbf{Çözüm:}
+    Sinüzoidal bir dalganın etkin değeri, genliğin $\frac{1}{\sqrt{2}}$ katıdır. Verilen sinyalde, $v(t) = V_m \sin(2t)$, genlik $V_m$ 'dir. Dolayısıyla, etkin değer:
+    \[
+    V_{rms} = \frac{V_m}{\sqrt{2}}
+    \]
+\end{itemize}
+
+\subsection*{Örnek Soru 2}
+\begin{itemize}
+\item \textbf{Soru:} Şekilde gösterilen testere dişi dalganın ortalama ve etkin değerlerini bulunuz. Grafik, 0'dan 100'e (y ekseni) ve 0'dan 100'e (x ekseni) giden bir testere dişi dalgayı göstermektedir. Testere dişi dalga 100'de kendini tekrarlamaktadır.
+\item \textbf{Çözüm:}
+    \begin{itemize}
+    \item \textbf{Ortalama Değer ($V_{ort}$):} Testere dişi dalganın ortalama değeri, bir periyot boyunca dalganın integralinin periyoda bölünmesiyle hesaplanır. Bu dalga için, $v(t) = t$ (0 ile 100 arasında). Ortalama değer:
+    \[
+    V_{ort} = \frac{1}{T} \int_{0}^{T} v(t) \, dt = \frac{1}{100} \int_{0}^{100} t \, dt = \frac{1}{100} \left[ \frac{t^2}{2} \right]_0^{100} = \frac{1}{100} \times \frac{100^2}{2} = 50
+    \]
+    \item \textbf{Etkin Değer ($V_{rms}$):} Etkin değer, bir periyot boyunca sinyalin karesinin ortalamasının kareköküdür.
+    \[
+    V_{rms} = \sqrt{\frac{1}{T} \int_{0}^{T} v(t)^2 \, dt} = \sqrt{\frac{1}{100} \int_{0}^{100} t^2 \, dt} = \sqrt{\frac{1}{100} \left[ \frac{t^3}{3} \right]_0^{100}} = \sqrt{\frac{100^3}{3 \times 100}} = \sqrt{\frac{10000}{3}} \approx 57.74
+    \]
+    \end{itemize}
+\end{itemize}
+
+\end{spacing}
+\end{document}

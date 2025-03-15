@@ -1,0 +1,125 @@
+\documentclass[11pt,letterpaper,twocolumn]{fenbil}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\title{FMM - Fizikte Matematiksel Metotlar - Ders Notları (Devam)}
+\author{Celal Ekrem Torun}
+\date{6 Mart 2025}
+
+\begin{document}
+\twocolumn[\begin{@twocolumnfalse}
+
+\begin{minipage}{0.15\textwidth}{
+    }
+\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.75\textwidth}
+\vspace{5mm}
+\Large{\textbf{FMM - Fizikte Matematiksel Metotlar - Ders 2 (6 Mart 2025)}}
+    \vspace{3mm}
+    
+    \large{\textbf{Hazırlayan}; Celal Ekrem Torun}
+    \vspace{2mm}
+    
+    \fontsize{0.35cm}{0.5cm}\selectfont \textit{Fizik Bölümü, İstanbul Üniversitesi\newline 
+    Beyazıt, Fatih, İstanbul, Türkiye}
+    
+\end{minipage}
+
+\small
+
+\end{@twocolumnfalse}]
+
+\section{Eğrisel Koordinat Sisteminin Taban Vektörleri ve Ölçek Çarpanları (Devam)}
+
+Bir önceki bölümde, eğrisel koordinat sistemlerinin temel kavramlarını incelemiştik. Bu bölümde, taban vektörleri ve ölçek çarpanları konusuna devam edeceğiz.
+
+\subsection{Teğet Vektörleri}
+
+Eğrisel koordinat sisteminde, teğet vektörleri, her bir koordinatın değişim yönünü gösterir. Konum vektörü $\vec{r}(u_1, u_2, u_3)$ olmak üzere, teğet vektörleri şu şekilde tanımlanır:
+
+\begin{equation}
+\vec{t_1} = \frac{\partial \vec{r}}{\partial u_1}
+\end{equation}
+\begin{equation}
+\vec{t_2} = \frac{\partial \vec{r}}{\partial u_2}
+\end{equation}
+\begin{equation}
+\vec{t_3} = \frac{\partial \vec{r}}{\partial u_3}
+\end{equation}
+
+Bu vektörler, eğrisel koordinat sisteminin tabanını oluşturur.
+
+\subsection{Taban Vektörleri}
+
+Taban vektörleri, teğet vektörlerinin normalleştirilmesiyle elde edilir. Bu vektörler, birim uzunluğa sahiptir ve koordinat sisteminin yönünü gösterir. Taban vektörleri şu şekilde tanımlanır:
+
+\begin{equation}
+\hat{e_1} = \frac{\vec{t_1}}{|\vec{t_1}|} = \frac{1}{h_1} \vec{t_1}
+\end{equation}
+\begin{equation}
+\hat{e_2} = \frac{\vec{t_2}}{|\vec{t_2}|} = \frac{1}{h_2} \vec{t_2}
+\end{equation}
+\begin{equation}
+\hat{e_3} = \frac{\vec{t_3}}{|\vec{t_3}|} = \frac{1}{h_3} \vec{t_3}
+\end{equation}
+
+Burada $h_1$, $h_2$ ve $h_3$, ölçek çarpanlarıdır ve teğet vektörlerinin büyüklüklerine eşittir:
+
+\begin{itemize}
+    \item $h_1 = |\vec{t_1}| = \left| \frac{\partial \vec{r}}{\partial u_1} \right|$
+    \item $h_2 = |\vec{t_2}| = \left| \frac{\partial \vec{r}}{\partial u_2} \right|$
+    \item $h_3 = |\vec{t_3}| = \left| \frac{\partial \vec{r}}{\partial u_3} \right|$
+\end{itemize}
+
+\subsection{Geometrik Gösterim}
+
+Aşağıdaki şema, taban vektörlerini ve eğrisel koordinatları küçük bir Kartezyen sisteminde göstermektedir:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % Eksenleri çiz
+        \draw[thick, ->] (-3,0) -- (3,0) node[anchor=north west] {x};
+        \draw[thick, ->] (0,-3) -- (0,3) node[anchor=south east] {y};
+        \draw[thick, ->] (0,0) -- (1.5,1.5) node[anchor=west] {z};
+
+        % Taban vektörleri
+        \draw[blue, thick, ->] (0,0) -- (2,0) node[midway, below] {$\hat{e_1}$};
+        \draw[red, thick, ->] (0,0) -- (0,2) node[midway, left] {$\hat{e_2}$};
+        \draw[green, thick, ->] (0,0) -- (1,1) node[midway, above right] {$\hat{e_3}$};
+
+        % Eğrisel yüzeyler
+        \draw[dashed, blue] (2,0) arc (0:45:2);
+        \draw[dashed, red] (0,2) arc (90:45:2);
+    \end{tikzpicture}
+    \caption{Taban Vektörleri ve Eğrisel Koordinatlar}
+    \label{fig:taban_vektorleri}
+\end{figure}
+
+Bu şemada:
+
+\begin{itemize}
+    \item $\hat{e_1}$, $\hat{e_2}$ ve $\hat{e_3}$: Birim taban vektörlerini temsil eder.
+    \item Eğriler: Eğrisel koordinatların değişimini temsil eder.
+    \item $P(u_1, u_2, u_3)$: Eğrisel koordinat sistemindeki bir noktayı temsil eder.
+\end{itemize}
+
+\subsection{Konum Vektörünün İfadesi}
+
+Konum vektörü $\vec{r}$, Kartezyen koordinatlarda şu şekilde ifade edilir:
+
+\begin{equation}
+\vec{r} = x \, \hat{e_x} + y \, \hat{e_y} + z \, \hat{e_z}
+\end{equation}
+
+Eğrisel koordinatlarda ise, teğet vektörleri kullanılarak ifade edilebilir:
+
+\begin{equation}
+\vec{t_1} = \frac{\partial \vec{r}}{\partial u_1} = \frac{\partial x}{\partial u_1} \hat{e_x} + \frac{\partial y}{\partial u_1} \hat{e_y} + \frac{\partial z}{\partial u_1} \hat{e_z}
+\end{equation}
+
+Bu ifade, $u_1$ koordinatındaki değişimin, konum vektörünü nasıl etkilediğini gösterir.
+
+\end{document}

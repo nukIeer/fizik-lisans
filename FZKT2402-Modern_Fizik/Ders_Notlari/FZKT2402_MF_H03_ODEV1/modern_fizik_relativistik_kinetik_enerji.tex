@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Modern Fizik Notları - Relativistik Kinetik Enerji (Ödev Sorusu)}
+
+\subsection{Giriş}
+Bu notlar, \( x \) kütleli bir elektronun relativistik ve klasik mekaniklere göre hızını ve kinetik enerjisini hesaplayan bir ödev sorusunu içermektedir.
+
+\subsection{Veriler}
+\begin{itemize}
+    \item Elektronun kütlesi: \( m = 0.1 \, \text{kg} \)
+    \item Işık hızı: \( c = 2.998 \times 10^8 \, \text{m/s} \)
+\end{itemize}
+
+\subsection{Relativistik Hesaplamalar}
+\subsubsection{Relativistik Hız}
+Relativistik enerji-kütle ilişkisi:
+\[ E = mc^2 \]
+Kinetik enerji, toplam enerji ile durgun kütle enerjisi arasındaki farktır:
+\[ KE = E - m_0c^2 \]
+Verilen \( m \) değerinin, hızlandıktan sonraki kütle olduğu varsayılırsa, \( m = \gamma m_0 \), burada \( \gamma \) Lorentz faktörüdür.
+
+Lorentz faktörü:
+\[ \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \]
+\[ m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}} \]
+\[ \sqrt{1 - \frac{v^2}{c^2}} = \frac{m_0}{m} \]
+\[ 1 - \frac{v^2}{c^2} = \left( \frac{m_0}{m} \right)^2 \]
+\[ \frac{v^2}{c^2} = 1 - \left( \frac{m_0}{m} \right)^2 \]
+\[ v = c \sqrt{1 - \left( \frac{m_0}{m} \right)^2} \]
+Durgun kütle \( m_0 \) verilmediği için, bu değeri varsaymak veya ek bilgiye ihtiyaç duymaktayız. Ancak, \( m_0 \) değerini \( m \) değerine çok yakın bir değer olarak kabul edersek (örneğin, \( m_0 = 0.999 \, m \)), hızı hesaplayabiliriz.
+
+Eğer \( m_0 = 0.999 \, m \) ise:
+\[ v = (2.998 \times 10^8) \sqrt{1 - (0.999)^2} \]
+\[ v \approx 4.239 \times 10^7 \, \text{m/s} \]
+
+\subsubsection{Relativistik Kinetik Enerji}
+\[ KE = mc^2 - m_0c^2 = (m - m_0)c^2 \]
+\[ KE = (0.1 \, \text{kg} - 0.0999 \, \text{kg}) \times (2.998 \times 10^8 \, \text{m/s})^2 \]
+\[ KE = 0.0001 \, \text{kg} \times (8.988 \times 10^{16} \, \text{m}^2/\text{s}^2) \]
+\[ KE = 8.988 \times 10^{12} \, \text{J} \]
+
+\subsection{Klasik Hesaplamalar}
+\subsubsection{Klasik Hız}
+Klasik mekanikte kinetik enerji:
+\[ KE = \frac{1}{2} m v^2 \]
+Kinetik enerji değeri yukarıda relativistik olarak hesapladığımız \( KE = 8.988 \times 10^{12} \, \text{J} \) değerini kullanırsak:
+\[ 8.988 \times 10^{12} = \frac{1}{2} \times 0.1 \times v^2 \]
+\[ v^2 = \frac{2 \times 8.988 \times 10^{12}}{0.1} \]
+\[ v^2 = 1.7976 \times 10^{14} \]
+\[ v = \sqrt{1.7976 \times 10^{14}} \]
+\[ v \approx 1.341 \times 10^7 \, \text{m/s} \]
+
+\subsubsection{Klasik Kinetik Enerji}
+Zaten yukarıda kullanıldı.
+
+\subsection{Sonuç}
+Relativistik hız: \( v \approx 4.239 \times 10^7 \, \text{m/s} \)
+Relativistik kinetik enerji: \( KE = 8.988 \times 10^{12} \, \text{J} \)
+Klasik hız: \( v \approx 1.341 \times 10^7 \, \text{m/s} \)
+
+\end{document}

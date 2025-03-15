@@ -1,0 +1,166 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+
+\title{FMM - Fizikte Matematiksel Metotlar - Uygulama Devam}
+\author{Celal Ekrem Torun}
+\date{10 Mart 2025}
+
+\begin{document}
+
+\section{Uygulama}
+
+\subsection*{Soru}
+$S_1: x^2 + y^2 + z^2 = 9$ ve $S_2: z = x^2 + y^2 - 3$ yüzeyleri veriliyor. Bu yüzeylerin $P(2, -1, 2)$ noktasındaki teğet düzlemleri arasındaki açıyı bulunuz.
+
+\textbf{Çözüm:}
+İki yüzey arasındaki açı, yüzeylerin normal vektörleri arasındaki açıdır.
+
+Adım 1: Her yüzey için gradyan vektörlerini hesaplayın:
+$S_1: f(x, y, z) = x^2 + y^2 + z^2 - 9 = 0$
+$S_2: g(x, y, z) = x^2 + y^2 - z - 3 = 0$
+
+Gradyanları hesaplayalım:
+\[
+\nabla f = \frac{\partial f}{\partial x}\hat{i} + \frac{\partial f}{\partial y}\hat{j} + \frac{\partial f}{\partial z}\hat{k} = (2x)\hat{i} + (2y)\hat{j} + (2z)\hat{k}
+\]
+\[
+\nabla g = \frac{\partial g}{\partial x}\hat{i} + \frac{\partial g}{\partial y}\hat{j} + \frac{\partial g}{\partial z}\hat{k} = (2x)\hat{i} + (2y)\hat{j} + (-1)\hat{k}
+\]
+
+Adım 2: Gradyanları $P(2, -1, 2)$ noktasında değerlendirin:
+\[
+\nabla f(2, -1, 2) = (2(2))\hat{i} + (2(-1))\hat{j} + (2(2))\hat{k} = 4\hat{i} - 2\hat{j} + 4\hat{k}
+\]
+\[
+\nabla g(2, -1, 2) = (2(2))\hat{i} + (2(-1))\hat{j} + (-1)\hat{k} = 4\hat{i} - 2\hat{j} - \hat{k}
+\]
+
+Adım 3: Gradyanların iç çarpımını ve büyüklüklerini hesaplayın:
+\[
+\nabla f \cdot \nabla g = (4)(4) + (-2)(-2) + (4)(-1) = 16 + 4 - 4 = 16
+\]
+\[
+|\nabla f| = \sqrt{4^2 + (-2)^2 + 4^2} = \sqrt{16 + 4 + 16} = \sqrt{36} = 6
+\]
+\[
+|\nabla g| = \sqrt{4^2 + (-2)^2 + (-1)^2} = \sqrt{16 + 4 + 1} = \sqrt{21}
+\]
+
+Adım 4: Açı kosinüsünü hesaplayın:
+\[
+\cos{\theta} = \frac{|\nabla f \cdot \nabla g|}{|\nabla f| |\nabla g|} = \frac{|16|}{6 \sqrt{21}} = \frac{8}{3\sqrt{21}}
+\]
+
+Adım 5: Açıyı bulun:
+\[
+\theta = \arccos{\left(\frac{8}{3\sqrt{21}}\right)}
+\]
+\textbf{Sonuç olarak}, yüzeyler arasındaki açı $\arccos{\left(\frac{8}{3\sqrt{21}}\right)}$'dir.
+
+\subsection*{6. Soru}
+Küresel koordinat sistemi için:
+\begin{enumerate}
+    \item Teğet vektörlerini, ölçek çarpanlarını ve birim taban vektörlerini bulunuz.
+    \item Sistemin ortogonal olduğunu gösteriniz.
+    \item Taban vektörlerinin dönüşüm formüllerini yazınız.
+\end{enumerate}
+
+Koordinatlar: $(r, \theta, \phi)$
+Dönüşüm denklemleri:
+\begin{align*}
+x &= r \sin{\theta} \cos{\phi} \\
+y &= r \sin{\theta} \sin{\phi} \\
+z &= r \cos{\theta}
+\end{align*}
+Konum vektörü: $\vec{r} = x\hat{i} + y\hat{j} + z\hat{k}$
+
+\textbf{Çözüm:}
+
+Adım 1: Teğet vektörlerini bulun:
+\[
+\vec{T_r} = \frac{\partial \vec{r}}{\partial r} = \sin{\theta} \cos{\phi} \hat{i} + \sin{\theta} \sin{\phi} \hat{j} + \cos{\theta} \hat{k}
+\]
+\[
+\vec{T_\theta} = \frac{\partial \vec{r}}{\partial \theta} = r \cos{\theta} \cos{\phi} \hat{i} + r \cos{\theta} \sin{\phi} \hat{j} - r \sin{\theta} \hat{k}
+\]
+\[
+\vec{T_\phi} = \frac{\partial \vec{r}}{\partial \phi} = -r \sin{\theta} \sin{\phi} \hat{i} + r \sin{\theta} \cos{\phi} \hat{j}
+\]
+
+Adım 2: Ölçek çarpanlarını bulun:
+\[
+h_r = |\vec{T_r}| = \sqrt{(\sin{\theta} \cos{\phi})^2 + (\sin{\theta} \sin{\phi})^2 + (\cos{\theta})^2} = 1
+\]
+\[
+h_\theta = |\vec{T_\theta}| = \sqrt{(r \cos{\theta} \cos{\phi})^2 + (r \cos{\theta} \sin{\phi})^2 + (-r \sin{\theta})^2} = r
+\]
+\[
+h_\phi = |\vec{T_\phi}| = \sqrt{(-r \sin{\theta} \sin{\phi})^2 + (r \sin{\theta} \cos{\phi})^2} = r \sin{\theta}
+\]
+
+Adım 3: Birim taban vektörlerini bulun:
+\[
+\hat{e_r} = \frac{\vec{T_r}}{h_r} = \sin{\theta} \cos{\phi} \hat{i} + \sin{\theta} \sin{\phi} \hat{j} + \cos{\theta} \hat{k}
+\]
+\[
+\hat{e_\theta} = \frac{\vec{T_\theta}}{h_\theta} = \cos{\theta} \cos{\phi} \hat{i} + \cos{\theta} \sin{\phi} \hat{j} - \sin{\theta} \hat{k}
+\]
+\[
+\hat{e_\phi} = \frac{\vec{T_\phi}}{h_\phi} = -\sin{\phi} \hat{i} + \cos{\phi} \hat{j}
+\]
+
+Adım 4: Sistemin ortogonal olduğunu gösterin:
+İki vektörün ortogonal olması için iç çarpımlarının sıfır olması gerekir.
+\[
+\hat{e_r} \cdot \hat{e_\theta} = (\sin{\theta} \cos{\phi})(\cos{\theta} \cos{\phi}) + (\sin{\theta} \sin{\phi})(\cos{\theta} \sin{\phi}) + (\cos{\theta})(-\sin{\theta}) = 0
+\]
+\[
+\hat{e_r} \cdot \hat{e_\phi} = (\sin{\theta} \cos{\phi})(-\sin{\phi}) + (\sin{\theta} \sin{\phi})(\cos{\phi}) = 0
+\]
+\[
+\hat{e_\theta} \cdot \hat{e_\phi} = (\cos{\theta} \cos{\phi})(-\sin{\phi}) + (\cos{\theta} \sin{\phi})(\cos{\phi}) = 0
+\]
+İç çarpımların hepsi sıfır olduğundan, küresel koordinat sistemi ortogonaldir.
+
+Adım 5: Taban vektörlerinin dönüşüm formüllerini yazın:
+\[
+\hat{e_r} = \sin{\theta} \cos{\phi} \hat{i} + \sin{\theta} \sin{\phi} \hat{j} + \cos{\theta} \hat{k}
+\]
+\[
+\hat{e_\theta} = \cos{\theta} \cos{\phi} \hat{i} + \cos{\theta} \sin{\phi} \hat{j} - \sin{\theta} \hat{k}
+\]
+\[
+\hat{e_\phi} = -\sin{\phi} \hat{i} + \cos{\phi} \hat{j}
+\]
+
+\subsection*{Hermitsel Operatörler}
+
+Hermitsel operatörler, kuantum mekaniğinde önemli bir rol oynar. Bir operatörün hermitsel olması, fiziksel olarak ölçülebilir bir özelliği temsil ettiği anlamına gelir.
+
+\textbf{Tanım:}
+Bir $A$ operatörü, eğer her $\psi$ ve $\phi$ dalga fonksiyonları için aşağıdaki eşitlik sağlanıyorsa hermitseldir:
+\[
+\langle \phi | A \psi \rangle = \langle A \phi | \psi \rangle
+\]
+Burada $\langle \phi | \psi \rangle$, $\phi$ ve $\psi$ dalga fonksiyonlarının iç çarpımını temsil eder.
+
+Başka bir deyişle:
+\[
+\int \phi^* (A \psi) d\tau = \int (A^* \phi^*) \psi d\tau
+\]
+
+\textbf{Özellikler:}
+\begin{enumerate}
+    \item Hermitsel operatörlerin özdeğerleri reel sayılardır.
+    \item Hermitsel operatörlerin farklı özdeğerlere karşılık gelen özvektörleri ortogonaldir.
+\end{enumerate}
+
+\textbf{Örnek:}
+Momentum operatörü $(\hat{p} = -i\hbar \frac{\partial}{\partial x})$ hermitseldir.
+
+\end{document}
