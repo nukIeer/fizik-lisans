@@ -1,0 +1,237 @@
+\documentclass{fenbil}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tikz}
+
+\geometry{a4paper, margin=1in}
+
+\title{Uygulama Dersi - Hafta 3}
+\author{Koordinat Sistemleri ve Dönüşümleri}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Soru 2: Silindirik Koordinat Sisteminin Ortogonalliği}
+
+\subsection{Çözüm}
+
+Silindirik koordinat sisteminde üç koordinat vardır: $\rho$ (radyal mesafe), $\theta$ (açısal koordinat) ve $z$ (yükseklik). Bu koordinat sisteminin ortogonal olduğunu göstermek için iki yöntem kullanabiliriz:
+
+\subsubsection{1. Yöntem: Birim Vektörlerin Skaler Çarpımı}
+
+Silindirik koordinat sistemindeki birim vektörler $\vec{e}_\rho$, $\vec{e}_\theta$ ve $\vec{e}_z$ olarak gösterilir. Bir koordinat sisteminin ortogonal olması için, bu birim vektörlerin birbirine dik olması gerekir. Matematiksel olarak:
+
+\begin{align}
+\vec{e}_\rho \cdot \vec{e}_\theta &= 0 \\
+\vec{e}_\rho \cdot \vec{e}_z &= 0 \\
+\vec{e}_\theta \cdot \vec{e}_z &= 0
+\end{align}
+
+Bu skaler çarpımların sıfır olması, vektörlerin birbirine dik olduğunu gösterir.
+
+\subsubsection{2. Yöntem: Metrik Tensör Bileşenleri}
+
+Alternatif olarak, koordinat eğrilerinin teğet vektörleri arasındaki skaler çarpımların sıfır olduğunu gösterebiliriz:
+
+\begin{align}
+\vec{t}_\rho \cdot \vec{t}_\theta &= 0 \\
+\vec{t}_\rho \cdot \vec{t}_z &= 0 \\
+\vec{t}_\theta \cdot \vec{t}_z &= 0
+\end{align}
+
+Bu iki yöntemden herhangi biri, silindirik koordinat sisteminin ortogonal olduğunu kanıtlar.
+
+\section{Soru 3: Silindirik Koordinatlarda Birim Vektörler ve Dönüşüm Matrisi}
+
+\subsection{Çözüm}
+
+\subsubsection{Birim Vektörlerin Kartezyen Bileşenleri}
+
+Silindirik koordinatlardaki birim vektörleri, kartezyen birim vektörler cinsinden ifade edelim:
+
+\begin{align}
+\vec{e}_\rho &= \cos\theta\, \vec{e}_x + \sin\theta\, \vec{e}_y \\
+\vec{e}_\theta &= -\sin\theta\, \vec{e}_x + \cos\theta\, \vec{e}_y \\
+\vec{e}_z &= \vec{e}_z
+\end{align}
+
+\subsubsection{Koordinat Dönüşümleri}
+
+Silindirik koordinatlar ile kartezyen koordinatlar arasındaki ilişki:
+
+\begin{align}
+x &= \rho \cos\theta \\
+y &= \rho \sin\theta \\
+z &= z
+\end{align}
+
+\subsubsection{Dönüşüm Matrisi}
+
+Silindirik birim vektörleri kartezyen birim vektörler cinsinden ifade eden dönüşüm matrisi:
+
+\begin{align}
+\begin{bmatrix} \vec{e}_\rho \\ \vec{e}_\theta \\ \vec{e}_z \end{bmatrix} = 
+\begin{bmatrix} 
+\cos\theta & \sin\theta & 0 \\
+-\sin\theta & \cos\theta & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix} \vec{e}_x \\ \vec{e}_y \\ \vec{e}_z \end{bmatrix}
+\end{align}
+
+Bu matrisin tersi, kartezyen birim vektörleri silindirik birim vektörler cinsinden ifade eder:
+
+\begin{align}
+\begin{bmatrix} \vec{e}_x \\ \vec{e}_y \\ \vec{e}_z \end{bmatrix} = 
+\begin{bmatrix} 
+\cos\theta & -\sin\theta & 0 \\
+\sin\theta & \cos\theta & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix} \vec{e}_\rho \\ \vec{e}_\theta \\ \vec{e}_z \end{bmatrix}
+\end{align}
+
+\subsubsection{Konum Vektörünün İfadesi}
+
+Kartezyen koordinatlarda konum vektörü:
+\begin{align}
+\vec{r} = x\vec{e}_x + y\vec{e}_y + z\vec{e}_z
+\end{align}
+
+Silindirik koordinatlarda konum vektörünü ifade etmek için, kartezyen bileşenleri silindirik koordinatlar cinsinden yazıp, kartezyen birim vektörleri de silindirik birim vektörler cinsinden ifade edelim:
+
+\begin{align}
+\vec{r} &= \rho\cos\theta\vec{e}_x + \rho\sin\theta\vec{e}_y + z\vec{e}_z \\
+&= \rho\cos\theta(\cos\theta\vec{e}_\rho - \sin\theta\vec{e}_\theta) + \rho\sin\theta(\sin\theta\vec{e}_\rho + \cos\theta\vec{e}_\theta) + z\vec{e}_z \\
+&= \rho\cos^2\theta\vec{e}_\rho - \rho\cos\theta\sin\theta\vec{e}_\theta + \rho\sin^2\theta\vec{e}_\rho + \rho\sin\theta\cos\theta\vec{e}_\theta + z\vec{e}_z \\
+&= \rho(\cos^2\theta + \sin^2\theta)\vec{e}_\rho + \rho(\sin\theta\cos\theta - \cos\theta\sin\theta)\vec{e}_\theta + z\vec{e}_z \\
+&= \rho\vec{e}_\rho + z\vec{e}_z
+\end{align}
+
+Bu, silindirik koordinatlarda konum vektörünün standart ifadesidir.
+
+\section{Skaler Alanların Dönüşümü}
+
+Aşağıdaki skaler alanların silindirik koordinatlardaki ifadelerini bulalım:
+
+\subsection{$u_1 = 2xy^2 + x^2$}
+
+Kartezyen koordinatlardan silindirik koordinatlara dönüşüm formüllerini kullanarak:
+\begin{align}
+x &= \rho\cos\theta \\
+y &= \rho\sin\theta
+\end{align}
+
+$u_1$ ifadesini silindirik koordinatlarda yazalım:
+\begin{align}
+u_1 &= 2xy^2 + x^2 \\
+&= 2(\rho\cos\theta)(\rho\sin\theta)^2 + (\rho\cos\theta)^2 \\
+&= 2\rho^3\cos\theta\sin^2\theta + \rho^2\cos^2\theta \\
+&= \rho^2(2\rho\cos\theta\sin^2\theta + \cos^2\theta)
+\end{align}
+
+\subsection{$u_2 = xy + z$}
+
+Benzer şekilde:
+\begin{align}
+u_2 &= xy + z \\
+&= (\rho\cos\theta)(\rho\sin\theta) + z \\
+&= \rho^2\cos\theta\sin\theta + z
+\end{align}
+
+\subsection{$u_3 = x^2y + z^2y + z$}
+
+Ve son olarak:
+\begin{align}
+u_3 &= x^2y + z^2y + z \\
+&= (\rho\cos\theta)^2(\rho\sin\theta) + z^2(\rho\sin\theta) + z \\
+&= \rho^3\cos^2\theta\sin\theta + \rho z^2\sin\theta + z
+\end{align}
+
+\section{Ödev: Küresel Koordinatlara Uygulama}
+
+Soru 3'teki işlemleri küresel koordinatlara uygulayalım.
+
+\subsection{Küresel Koordinatlarda Birim Vektörler}
+
+Küresel koordinatlarda birim vektörleri kartezyen birim vektörler cinsinden ifade edelim:
+
+\begin{align}
+\vec{e}_r &= \sin\phi\cos\theta\, \vec{e}_x + \sin\phi\sin\theta\, \vec{e}_y + \cos\phi\, \vec{e}_z \\
+\vec{e}_\theta &= -\sin\theta\, \vec{e}_x + \cos\theta\, \vec{e}_y \\
+\vec{e}_\phi &= \cos\phi\cos\theta\, \vec{e}_x + \cos\phi\sin\theta\, \vec{e}_y - \sin\phi\, \vec{e}_z
+\end{align}
+
+Burada $r$ radyal mesafe, $\theta$ azimut açısı (xy-düzlemindeki açı) ve $\phi$ polar açıdır (z-ekseni ile yapılan açı).
+
+\subsection{Koordinat Dönüşümleri}
+
+Küresel koordinatlar ile kartezyen koordinatlar arasındaki ilişki:
+
+\begin{align}
+x &= r \sin\phi \cos\theta \\
+y &= r \sin\phi \sin\theta \\
+z &= r \cos\phi
+\end{align}
+
+\subsection{Dönüşüm Matrisi}
+
+Küresel birim vektörleri kartezyen birim vektörler cinsinden ifade eden dönüşüm matrisi:
+
+\begin{align}
+\begin{bmatrix} \vec{e}_r \\ \vec{e}_\theta \\ \vec{e}_\phi \end{bmatrix} = 
+\begin{bmatrix} 
+\sin\phi\cos\theta & \sin\phi\sin\theta & \cos\phi \\
+-\sin\theta & \cos\theta & 0 \\
+\cos\phi\cos\theta & \cos\phi\sin\theta & -\sin\phi
+\end{bmatrix}
+\begin{bmatrix} \vec{e}_x \\ \vec{e}_y \\ \vec{e}_z \end{bmatrix}
+\end{align}
+
+\subsection{Konum Vektörünün İfadesi}
+
+Küresel koordinatlarda konum vektörü:
+\begin{align}
+\vec{r} = r\vec{e}_r
+\end{align}
+
+Bu ifade, küresel koordinatlarda konum vektörünün sadece radyal bileşene sahip olduğunu gösterir.
+
+\subsection{Skaler Alanların Dönüşümü}
+
+Aynı skaler alanları küresel koordinatlarda ifade edelim:
+
+\subsubsection{$u_1 = 2xy^2 + x^2$}
+
+Küresel koordinatlarda:
+\begin{align}
+u_1 &= 2xy^2 + x^2 \\
+&= 2(r\sin\phi\cos\theta)(r\sin\phi\sin\theta)^2 + (r\sin\phi\cos\theta)^2 \\
+&= 2r^3\sin^3\phi\cos\theta\sin^2\theta + r^2\sin^2\phi\cos^2\theta \\
+&= r^2\sin^2\phi(2r\sin\phi\cos\theta\sin^2\theta + \cos^2\theta)
+\end{align}
+
+\subsubsection{$u_2 = xy + z$}
+
+Küresel koordinatlarda:
+\begin{align}
+u_2 &= xy + z \\
+&= (r\sin\phi\cos\theta)(r\sin\phi\sin\theta) + r\cos\phi \\
+&= r^2\sin^2\phi\cos\theta\sin\theta + r\cos\phi
+\end{align}
+
+\subsubsection{$u_3 = x^2y + z^2y + z$}
+
+Küresel koordinatlarda:
+\begin{align}
+u_3 &= x^2y + z^2y + z \\
+&= (r\sin\phi\cos\theta)^2(r\sin\phi\sin\theta) + (r\cos\phi)^2(r\sin\phi\sin\theta) + r\cos\phi \\
+&= r^3\sin^3\phi\cos^2\theta\sin\theta + r^3\cos^2\phi\sin\phi\sin\theta + r\cos\phi
+\end{align}
+
+\end{document}

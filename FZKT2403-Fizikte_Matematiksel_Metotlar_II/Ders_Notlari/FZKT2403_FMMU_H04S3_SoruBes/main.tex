@@ -1,0 +1,130 @@
+\documentclass[11pt,letterpaper,twocolumn]{fenbil}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+
+\title{FMM - Fizikte Matematiksel Metotlar - Uygulama Devam}
+\author{Celal Ekrem Torun}
+\date{10 Mart 2025}
+
+\begin{document}
+
+\begin{minipage}{0.15\textwidth}
+{}
+\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.75\textwidth}
+\vspace{5mm}
+\Large{\textbf{FMM - Fizikte Matematiksel Metotlar - Uygulama Devam}}
+\vspace{3mm}
+\large{\textbf{Hazırlayan}; Celal Ekrem Torun}
+\vspace{2mm}
+\fontsize{0.35cm}{0.5cm}\selectfont \textit{Fizik Bölümü, İstanbul Üniversitesi\newline
+Beyazıt, Fatih, İstanbul, Türkiye}
+\end{minipage}
+\small
+
+\vspace{2mm}
+\vspace{2mm}
+\vspace{2mm}
+\section{Uygulama}
+
+\subsection*{Soru 5}
+
+$S_1: x^2 + y^2 + z^2 = 9$ ve $S_2: z = x^2 + y^2 - 3$ yüzeyleri veriliyor. Bu yüzeylerin $P(2, -1, 2)$ noktasındaki teğet düzlemleri arasındaki açıyı bulunuz.
+
+\textbf{Çözüm:}
+
+İki yüzey arasındaki açı, yüzeylerin normal vektörleri arasındaki açıdır.
+
+Adım 1: Her yüzey için gradyan vektörlerini hesaplayalım:
+
+$S_1: f(x, y, z) = x^2 + y^2 + z^2 - 9 = 0$
+
+$S_2: g(x, y, z) = z - x^2 - y^2 + 3 = 0$
+
+Gradyanları hesaplayalım:
+
+\begin{align}
+\vec{\nabla} f &= \frac{\partial f}{\partial x}\hat{\mathbf{i}} + \frac{\partial f}{\partial y}\hat{\mathbf{j}} + \frac{\partial f}{\partial z}\hat{\mathbf{k}} \\
+&= 2x\hat{\mathbf{i}} + 2y\hat{\mathbf{j}} + 2z\hat{\mathbf{k}}
+\end{align}
+
+\begin{align}
+\vec{\nabla} g &= \frac{\partial g}{\partial x}\hat{\mathbf{i}} + \frac{\partial g}{\partial y}\hat{\mathbf{j}} + \frac{\partial g}{\partial z}\hat{\mathbf{k}} \\
+&= -2x\hat{\mathbf{i}} - 2y\hat{\mathbf{j}} + 1\hat{\mathbf{k}}
+\end{align}
+
+Adım 2: Gradyanları $P(2, -1, 2)$ noktasında değerlendirelim:
+
+\begin{align}
+\vec{\nabla} f(2, -1, 2) &= 2(2)\hat{\mathbf{i}} + 2(-1)\hat{\mathbf{j}} + 2(2)\hat{\mathbf{k}} \\
+&= 4\hat{\mathbf{i}} - 2\hat{\mathbf{j}} + 4\hat{\mathbf{k}}
+\end{align}
+
+\begin{align}
+\vec{\nabla} g(2, -1, 2) &= -2(2)\hat{\mathbf{i}} - 2(-1)\hat{\mathbf{j}} + 1\hat{\mathbf{k}} \\
+&= -4\hat{\mathbf{i}} + 2\hat{\mathbf{j}} + 1\hat{\mathbf{k}}
+\end{align}
+
+Adım 3: Normal vektörler arasındaki açıyı hesaplayalım. İki vektör arasındaki açı şu formülle bulunur:
+
+\begin{align}
+\cos\theta = \frac{\vec{\nabla} f \cdot \vec{\nabla} g}{|\vec{\nabla} f||\vec{\nabla} g|}
+\end{align}
+
+Önce iç çarpımı hesaplayalım:
+\begin{align}
+\vec{\nabla} f \cdot \vec{\nabla} g &= (4)(-4) + (-2)(2) + (4)(1) \\
+&= -16 - 4 + 4 \\
+&= -16
+\end{align}
+
+\vspace{2mm}
+\vspace{2mm}
+\vspace{2mm}
+\vspace{2mm}
+\hspace{10mm}
+Vektörlerin büyüklüklerini hesaplayalım:
+\begin{align}
+|\vec{\nabla} f| &= \sqrt{4^2 + (-2)^2 + 4^2} \\
+&= \sqrt{16 + 4 + 16} \\
+&= \sqrt{36} \\
+&= 6
+\end{align}
+
+\begin{align}
+|\vec{\nabla} g| &= \sqrt{(-4)^2 + 2^2 + 1^2} \\
+&= \sqrt{16 + 4 + 1} \\
+&= \sqrt{21}
+\end{align}
+
+Adım 4: Açı kosinüsünü hesaplayalım:
+\begin{align}
+\cos\theta &= \frac{\vec{\nabla} f \cdot \vec{\nabla} g}{|\vec{\nabla} f||\vec{\nabla} g|} \\
+&= \frac{-16}{6 \cdot \sqrt{21}} \\
+&= -\frac{16}{6\sqrt{21}} \\
+&= -\frac{8}{3\sqrt{21}}
+\end{align}
+
+Adım 5: Açıyı bulalım:
+\begin{align}
+\theta = \arccos\left(-\frac{8}{3\sqrt{21}}\right)
+\end{align}
+
+\textbf{Sonuç olarak}, yüzeyler arasındaki açı $\theta = \arccos\left(-\frac{8}{3\sqrt{21}}\right)$ radyandır.
+
+Sayısal değer olarak hesaplarsak:
+\begin{align}
+\frac{8}{3\sqrt{21}} &\approx \frac{8}{3 \cdot 4.583} \\
+&\approx \frac{8}{13.749} \\
+&\approx 0.582
+\end{align}
+
+Dolayısıyla $\theta \approx \arccos(-0.582) \approx 125.5^{\circ}$ olarak bulunur.
+
+\end{document}

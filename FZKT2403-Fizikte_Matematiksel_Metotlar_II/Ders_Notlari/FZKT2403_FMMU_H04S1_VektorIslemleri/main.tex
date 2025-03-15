@@ -1,0 +1,301 @@
+
+\documentclass[]{fenbil}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[turkish]{babel}
+
+\title{FMM - Fizikte Matematiksel Metotlar - Ders Notları}
+\author{Celal Ekrem Torun}
+\date{10 Mart 2025}
+
+\begin{document}
+
+\begin{minipage}{0.15\textwidth}
+{}
+\end{minipage}
+\hspace{25pt}
+\begin{minipage}{0.75\textwidth}
+\vspace{5mm}
+\Large{\textbf{FMM - Fizikte Matematiksel Metotlar}}
+\vspace{3mm}
+\large{\textbf{Hazırlayan}; Celal Ekrem Torun}
+\vspace{2mm}
+\fontsize{0.35cm}{0.5cm}\selectfont \textit{Fizik Bölümü, İstanbul Üniversitesi\newline
+Beyazıt, Fatih, İstanbul, Türkiye}
+\end{minipage}
+\small
+
+\section{Ders Notları}
+
+\subsection*{1. Soru}
+
+İki düzlem denklemi verilmiştir:
+
+\begin{align*}
+x - 2y + 3z &= 0 \\
+2x + y - z &= 5
+\end{align*}
+
+Bu düzlemlerin arasındaki açının kosinüsünü bulunuz.
+
+\textbf{Çözüm:}
+
+Düzlemlerin normal vektörleri sırasıyla $\vec{n}_1 = (1, -2, 3)$ ve $\vec{n}_2 = (2, 1, -1)$'dir. İki düzlem arasındaki açı, normal vektörleri arasındaki açıyla aynıdır. Bu açının kosinüsü, normal vektörlerin iç çarpımı ve büyüklükleri kullanılarak bulunur:
+
+\[
+\cos{\alpha} = \frac{|\vec{n}_1 \cdot \vec{n}_2|}{|\vec{n}_1| |\vec{n}_2|}
+\]
+
+Öncelikle, iç çarpımı hesaplayalım:
+
+\[
+\vec{n}_1 \cdot \vec{n}_2 = (1)(2) + (-2)(1) + (3)(-1) = 2 - 2 - 3 = -3
+\]
+
+Şimdi, vektörlerin büyüklüklerini hesaplayalım:
+
+\[
+|\vec{n}_1| = \sqrt{1^2 + (-2)^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}
+\]
+
+\[
+|\vec{n}_2| = \sqrt{2^2 + 1^2 + (-1)^2} = \sqrt{4 + 1 + 1} = \sqrt{6}
+\]
+
+Buna göre, kosinüs değeri:
+
+\[
+\cos{\alpha} = \frac{|-3|}{\sqrt{14} \cdot \sqrt{6}} = \frac{3}{\sqrt{84}} = \frac{3}{\sqrt{4 \cdot 21}} = \frac{3}{2\sqrt{21}}
+\]
+
+Yani, düzlemler arasındaki açının kosinüsü $\frac{3}{2\sqrt{21}}$'dir.
+
+\subsection*{2. Soru}
+
+$\vec{A} = 2\hat{\imath} - 3\hat{\jmath} + \hat{k}$ ve $\vec{B} = 3\hat{\jmath} - 4\hat{k}$ vektörleri veriliyor. $\vec{A}$'nın $\vec{B}$ üzerindeki izdüşümünü bulunuz.
+
+\textbf{Çözüm:}
+
+$\vec{A}$'nın $\vec{B}$ üzerindeki izdüşümü ($\vec{A}_{\text{proj } B}$), aşağıdaki formülle hesaplanır:
+
+\[
+\vec{A}_{\text{proj } B} = \frac{\vec{A} \cdot \vec{B}}{|\vec{B}|^2} \vec{B}
+\]
+
+İlk olarak, $\vec{A}$ ve $\vec{B}$'nin iç çarpımını hesaplayalım:
+
+\[
+\vec{A} \cdot \vec{B} = (2)(0) + (-3)(3) + (1)(-4) = 0 - 9 - 4 = -13
+\]
+
+Şimdi, $\vec{B}$'nin büyüklüğünün karesini hesaplayalım:
+
+\[
+|\vec{B}|^2 = 0^2 + 3^2 + (-4)^2 = 0 + 9 + 16 = 25
+\]
+
+İzdüşümü hesaplayalım:
+
+\[
+\vec{A}_{\text{proj } B} = \frac{-13}{25} (3\hat{\jmath} - 4\hat{k}) = -\frac{39}{25}\hat{\jmath} + \frac{52}{25}\hat{k}
+\]
+
+$\vec{A}$'nın $\vec{B}$ üzerindeki izdüşümü $-\frac{39}{25}\hat{\jmath} + \frac{52}{25}\hat{k}$'dir.
+
+İzdüşümün büyüklüğü:
+
+\[
+|\vec{A}_{\text{proj } B}| = \frac{|\vec{A} \cdot \vec{B}|}{|\vec{B}|} = \frac{|-13|}{5} = \frac{13}{5}
+\]
+
+\subsection*{3. Soru}
+
+$\phi = x^2y + xz$ fonksiyonunun $(1, 2, -1)$ noktasında $\vec{A} = 2\hat{\imath} - 2\hat{\jmath} + \hat{k}$ doğrultusundaki doğrultu türevini bulunuz.
+
+\textbf{Çözüm:}
+
+Doğrultu türevi, bir skaler alanın belirli bir yöndeki değişim oranını ifade eder. Bu, gradyan vektörü ile birim vektörün iç çarpımı alınarak bulunur.
+
+Adım 1: $\vec{A}$'yı birim vektöre dönüştürün:
+
+\[
+\hat{A} = \frac{\vec{A}}{|\vec{A}|}
+\]
+
+\[
+|\vec{A}| = \sqrt{2^2 + (-2)^2 + 1^2} = \sqrt{4 + 4 + 1} = \sqrt{9} = 3
+\]
+
+\[
+\hat{A} = \frac{2\hat{\imath} - 2\hat{\jmath} + \hat{k}}{3} = \frac{2}{3}\hat{\imath} - \frac{2}{3}\hat{\jmath} + \frac{1}{3}\hat{k}
+\]
+
+Adım 2: $\phi$'nin gradyanını hesaplayın:
+
+\[
+\nabla \phi = \frac{\partial \phi}{\partial x}\hat{\imath} + \frac{\partial \phi}{\partial y}\hat{\jmath} + \frac{\partial \phi}{\partial z}\hat{k}
+\]
+
+Kısmi türevleri hesaplayalım:
+
+\[
+\frac{\partial \phi}{\partial x} = 2xy + z
+\]
+
+\[
+\frac{\partial \phi}{\partial y} = x^2
+\]
+
+\[
+\frac{\partial \phi}{\partial z} = x
+\]
+
+Gradyan vektörü:
+
+\[
+\nabla \phi = (2xy + z)\hat{\imath} + (x^2)\hat{\jmath} + (x)\hat{k}
+\]
+
+Adım 3: Gradyanı $(1, 2, -1)$ noktasında değerlendirin:
+
+\[
+\nabla \phi (1, 2, -1) = (2(1)(2) + (-1))\hat{\imath} + (1^2)\hat{\jmath} + (1)\hat{k} = (4 - 1)\hat{\imath} + \hat{\jmath} + \hat{k} = 3\hat{\imath} + \hat{\jmath} + \hat{k}
+\]
+
+Adım 4: Doğrultu türevini hesaplayın:
+
+Doğrultu türevi, gradyan ile birim vektörün iç çarpımıdır:
+
+\[
+D_{\hat{A}}\phi = \nabla \phi \cdot \hat{A} = (3\hat{\imath} + \hat{\jmath} + \hat{k}) \cdot \left(\frac{2}{3}\hat{\imath} - \frac{2}{3}\hat{\jmath} + \frac{1}{3}\hat{k}\right)
+\]
+
+\[
+D_{\hat{A}}\phi = (3)\left(\frac{2}{3}\right) + (1)\left(-\frac{2}{3}\right) + (1)\left(\frac{1}{3}\right) = 2 - \frac{2}{3} + \frac{1}{3} = 2 - \frac{1}{3} = \frac{6-1}{3} = \frac{5}{3}
+\]
+
+Sonuç olarak, $\phi$'nin $(1, 2, -1)$ noktasındaki $\vec{A}$ doğrultusundaki doğrultu türevi $\frac{5}{3}$'tür.
+
+\subsection*{4. Soru}
+
+$x^2y + 2xz = 4$ yüzeyinin $P(2, -2, 3)$ noktasındaki birim normal vektörünü bulunuz.
+
+\textbf{Çözüm:}
+
+Yüzeyin birim normal vektörü, gradyan vektörünün yüzeyin o noktasındaki değerinin, gradyan vektörünün büyüklüğüne bölünmesiyle bulunur.
+
+Adım 1: $f(x, y, z) = x^2y + 2xz - 4 = 0$ olarak tanımlayın.
+
+Adım 2: Gradyan vektörünü hesaplayın:
+
+\[
+\nabla f = \frac{\partial f}{\partial x}\hat{\imath} + \frac{\partial f}{\partial y}\hat{\jmath} + \frac{\partial f}{\partial z}\hat{k}
+\]
+
+Kısmi türevleri hesaplayalım:
+
+\[
+\frac{\partial f}{\partial x} = 2xy + 2z
+\]
+
+\[
+\frac{\partial f}{\partial y} = x^2
+\]
+
+\[
+\frac{\partial f}{\partial z} = 2x
+\]
+
+Gradyan vektörü:
+
+\[
+\nabla f = (2xy + 2z)\hat{\imath} + (x^2)\hat{\jmath} + (2x)\hat{k}
+\]
+
+Adım 3: Gradyanı $P(2, -2, 3)$ noktasında değerlendirin:
+
+\[
+\nabla f(2, -2, 3) = (2(2)(-2) + 2(3))\hat{\imath} + (2^2)\hat{\jmath} + (2(2))\hat{k} = (-8 + 6)\hat{\imath} + 4\hat{\jmath} + 4\hat{k} = -2\hat{\imath} + 4\hat{\jmath} + 4\hat{k}
+\]
+
+Adım 4: Gradyanın büyüklüğünü $P$ noktasında hesaplayın:
+
+\[
+|\nabla f(2, -2, 3)| = \sqrt{(-2)^2 + 4^2 + 4^2} = \sqrt{4 + 16 + 16} = \sqrt{36} = 6
+\]
+
+Adım 5: Birim normal vektörünü hesaplayın:
+
+\[
+\hat{n} = \frac{\nabla f}{|\nabla f|} = \frac{-2\hat{\imath} + 4\hat{\jmath} + 4\hat{k}}{6} = -\frac{1}{3}\hat{\imath} + \frac{2}{3}\hat{\jmath} + \frac{2}{3}\hat{k}
+\]
+
+\textbf{Sonuç olarak}, yüzeyin $P(2, -2, 3)$ noktasındaki birim normal vektörü $-\frac{1}{3}\hat{\imath} + \frac{2}{3}\hat{\jmath} + \frac{2}{3}\hat{k}$'dir.
+
+\subsection*{5. Soru}
+
+$S_1: x^2 + y^2 + z^2 = 9$ ve $S_2: z = x^2 + y^2 - 3$ yüzeyleri veriliyor. Bu yüzeylerin $P(2, -1, 2)$ noktasındaki teğet düzlemleri arasındaki açıyı bulunuz.
+
+\textbf{Çözüm:}
+
+İki yüzey arasındaki açı, yüzeylerin normal vektörleri arasındaki açıdır.
+
+Adım 1: Her yüzey için gradyan vektörlerini hesaplayın:
+
+$S_1: f(x, y, z) = x^2 + y^2 + z^2 - 9 = 0$
+
+$S_2: g(x, y, z) = x^2 + y^2 - z - 3 = 0$
+
+Gradyanları hesaplayalım:
+
+\[
+\nabla f = \frac{\partial f}{\partial x}\hat{\imath} + \frac{\partial f}{\partial y}\hat{\jmath} + \frac{\partial f}{\partial z}\hat{k} = (2x)\hat{\imath} + (2y)\hat{\jmath} + (2z)\hat{k}
+\]
+
+\[
+\nabla g = \frac{\partial g}{\partial x}\hat{\imath} + \frac{\partial g}{\partial y}\hat{\jmath} + \frac{\partial g}{\partial z}\hat{k} = (2x)\hat{\imath} + (2y)\hat{\jmath} + (-1)\hat{k}
+\]
+
+Adım 2: Gradyanları $P(2, -1, 2)$ noktasında değerlendirin:
+
+\[
+\nabla f(2, -1, 2) = (2(2))\hat{\imath} + (2(-1))\hat{\jmath} + (2(2))\hat{k} = 4\hat{\imath} - 2\hat{\jmath} + 4\hat{k}
+\]
+
+\[
+\nabla g(2, -1, 2) = (2(2))\hat{\imath} + (2(-1))\hat{\jmath} + (-1)\hat{k} = 4\hat{\imath} - 2\hat{\jmath} - \hat{k}
+\]
+
+Adım 3: Gradyanların iç çarpımını ve büyüklüklerini hesaplayın:
+
+\[
+\nabla f \cdot \nabla g = (4)(4) + (-2)(-2) + (4)(-1) = 16 + 4 - 4 = 16
+\]
+
+\[
+|\nabla f| = \sqrt{4^2 + (-2)^2 + 4^2} = \sqrt{16 + 4 + 16} = \sqrt{36} = 6
+\]
+
+\[
+|\nabla g| = \sqrt{4^2 + (-2)^2 + (-1)^2} = \sqrt{16 + 4 + 1} = \sqrt{21}
+\]
+
+Adım 4: Açı kosinüsünü hesaplayın:
+
+\[
+\cos{\theta} = \frac{\nabla f \cdot \nabla g}{|\nabla f| \cdot |\nabla g|} = \frac{16}{6 \cdot \sqrt{21}} = \frac{16}{6\sqrt{21}} = \frac{8}{3\sqrt{21}}
+\]
+
+Adım 5: Açıyı bulun:
+
+\[
+\theta = \arccos{\left(\frac{8}{3\sqrt{21}}\right)}
+\]
+
+\textbf{Sonuç olarak}, yüzeyler arasındaki açı $\arccos{\left(\frac{8}{3\sqrt{21}}\right)}$'dir.
+
+\end{document}
