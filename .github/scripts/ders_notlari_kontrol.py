@@ -7,9 +7,29 @@ import json
 import pandas as pd
 from tabulate import tabulate
 from colorama import Fore, Style, init
+import shutil
 
 # Colorama başlat
 init(autoreset=True)
+
+def create_release_with_pdfs():
+    """GitHub release için PDF dosyalarını toplar ve oluşturur."""
+    release_folder = 'release_pdfs'
+    os.makedirs(release_folder, exist_ok=True)
+    
+    # JSON dosyasından dosya listesini oku
+    with open('file_list.json', 'r') as f:
+        file_list = json.load(f)
+    
+    # PDF dosyalarını filtrele ve 'release_pdfs' klasörüne kopyala
+    for file_info in file_list:
+        filename = file_info['name']
+        filepath = file_info['path']
+        
+        if filepath.endswith(".pdf"):
+            shutil.copy(filepath, os.path.join(release_folder, filename))
+    
+    print(f"{Fore.CYAN}📦 PDF dosyaları {release_folder} klasörüne kopyalandı.")
 
 def main():
     # JSON dosyadan dosya listesini oku
@@ -170,22 +190,15 @@ def main():
         else:
             f.write("Henüz dosya yok veya dosya adı deseni tanınmadı.\n")
     
-    # Konsola raporla
-    if sorunlar:
-        print(f"{Fore.RED}🚨 {len(sorunlar)} adet sorun tespit edildi!")
-        for sorun in sorunlar:
-            print(f"{Fore.YELLOW} - {sorun}")
-    else:
-        print(f"{Fore.GREEN}✅ Tüm kontroller başarılı! Herhangi bir sorun bulunamadı.")
-    
-    print(f"\n{Fore.CYAN}📊 Rapor 'rapor.md' dosyasına kaydedildi.")
-    
     # GitHub Actions çıktısı için
     if 'GITHUB_OUTPUT' in os.environ:
         with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
             sorun_sayisi = len(sorunlar)
             fh.write(f'sorun_sayisi={sorun_sayisi}\n')
             fh.write(f'rapor_olusturuldu=true\n')
+
+    # PDF'leri release olarak sunma
+    create_release_with_pdfs()
 
 if __name__ == "__main__":
     main()
