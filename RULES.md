@@ -32,7 +32,7 @@ Beyazıt, Fatih, İstanbul, Türkiye\newline
 \section{[İLK BÖLÜM BAŞLIĞI BURAYA]}
 
    - Dosyanın adını (örn: FZKT2403_FMM_H04S1_EgriselVektorlerTensorler.pdf) belgenin üst kısmında veya dipnot olarak belirt
-   - Dökümanın iki kolonlu bir formatla devam etmesini sağla
+   - Dökümanın iki kolonlu bir formatla devam etmesini sağla.
 
 2. Matematiksel İçerik:
    - Tüm matematiksel ifadeleri LaTeX formatında düzgün şekilde yaz
