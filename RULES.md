@@ -50,6 +50,7 @@ Beyazıt, Fatih, İstanbul, Türkiye\newline
 ```
 
 - Dosya adını (örn: FZKT2403_FMM_H04S1_EgriselVektorlerTensorler.pdf) belgenin üst kısmında mutlaka belirt
+- Yapay zeka adını (senin ismin) belgenin üst kısmında mutlaka belirt
 - Dökümanın iki kolonlu bir formatla devam etmesini sağla
 
 ## 2. Dönem Planı ve Tarihlendirme:
@@ -115,6 +116,7 @@ FZKT1201 	Elektrik ve Manyetizma 	Doç. Dr. Hulusi Kemal Ulutaş
 
 ## 11. LaTeX Preamble ve Paketler:
 - Belgeyi oluştururken aşağıdaki LaTeX preamble'ı kullan ve gerekli tüm paketleri ekle:
+- İki sütunlu FORMAT KULLANIYORUZ BU YÜZDEN  denklemlerin ve içeriğin taşmasını engellemek için gerekli düzenlemeyi kullan
 
 ```latex
 \documentclass[11pt,letterpaper,twocolumn]{fenbil}
@@ -131,50 +133,4 @@ FZKT1201 	Elektrik ve Manyetizma 	Doç. Dr. Hulusi Kemal Ulutaş
 
 İki sütunlu formatta denklemlerin ve içeriğin taşmasını engellemek için aşağıdaki ek kuralları öneririm:
 
-## 5. İki Sütunlu Format ve Taşma Sorunu (Genişletilmiş):
-
-- Uzun denklemler için `\begin{equation*}` yerine `\begin{align*}` kullanarak denklemleri uygun yerlerden böl ve satır sonlandır
-- Matematik formüllerinde sık sık `\displaystyle` yerine `\scriptstyle` veya `\small` kullan
-- Denklemlerin sütunlara sığması için şu önlemleri al:
-  ```latex
-  % Çok uzun denklemleri tek sütun içinde tutmak için
-  \begin{strip}
-  \begin{align}
-    [uzun denklem buraya]
-  \end{align}
-  \end{strip}
-  ```
-- Denklemleri yazarken hizalama için `&` işaretini etkili kullan
-- `breqn` paketini kullan: Bu paket uzun denklemleri otomatik olarak satırlara böler
-  ```latex
-  \usepackage{breqn}
-  % Sonra denklemlerinizi dmath ortamında yazabilirsiniz
-  \begin{dmath}
-    [uzun denklem buraya]
-  \end{dmath}
-  ```
-- Uzun matrisler için düzgün formatlama yap:
-  ```latex
-  \begin{pmatrix}
-    a_{11} & a_{12} & \cdots & a_{1n} \\
-    a_{21} & a_{22} & \cdots & a_{2n} \\
-    \vdots & \vdots & \ddots & \vdots \\
-    a_{m1} & a_{m2} & \cdots & a_{mn}
-  \end{pmatrix}
-  ```
-- Preamble'a aşağıdaki paketleri ve ayarları ekle:
-  ```latex
-  \usepackage{cuted} % strip ortamı için
-  \usepackage{breqn} % otomatik denklem kırılımı için
-  \usepackage{mathtools} % Gelişmiş matematik araçları
-  
-  % Satır arası boşlukları azalt
-  \setlength{\abovedisplayskip}{3pt}
-  \setlength{\belowdisplayskip}{3pt}
-  \setlength{\abovedisplayshortskip}{3pt}
-  \setlength{\belowdisplayshortskip}{3pt}
-  
-  % Sütun yapısını düzenle
-  \setlength{\columnsep}{15pt} % Sütunlar arası boşluğu azalt
-  ```
 Lütfu tam ve eksiksiz bir LaTeX belgesi oluştur, tüm matematik sembollerini doğru formatlarda kullan, ve önemli yerleri vurgula.
