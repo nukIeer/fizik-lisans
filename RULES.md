@@ -54,6 +54,7 @@ Beyazıt, Fatih, İstanbul, Türkiye\newline
 
 ## 2. Dönem Planı ve Tarihlendirme:
 - 1. Hafta **17 Feb Monday** ile başlıyor. Tüm tarihlendirmeleri buna göre hesapla.
+- 2025 Bahar dönemindeyiz notları buna göre planla.
 - Dosya adındaki "H" (Hafta) ve "S" (Session) bilgilerini bu başlangıç tarihine göre düzenle
 
 ## 3. Öğretim Üyeleri:
