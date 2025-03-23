@@ -57,11 +57,14 @@ Beyazıt, Fatih, İstanbul, Türkiye\newline
 - Dosya adındaki "H" (Hafta) ve "S" (Session) bilgilerini bu başlangıç tarihine göre düzenle
 
 ## 3. Öğretim Üyeleri:
-- FZKT2401 (Matematik Fizik Metodları I): Prof. Dr. İlhan İnan
-- FZKT2403 (Fonksiyonlu Matematik Metodları): Dr. Öğr. Üyesi Muzaffer Eken
-- FZKT2405 (Kuantum Fiziği I): Doç. Dr. M. Ali Oflaz
-- FZKT2407 (Elektrodinamik): Prof. Dr. Eldar Veliev
-- FZKT2409 (İstatistik Fizik I): Prof. Dr. Yusuf Yılmaz
+Ders Kodu 	Ders Adı 	Öğretim Elemanı 	AKTS 	Kredi 	Materyal
+FZKT2401 	Klasik Mekanik 	Doç. Dr. Fatma Aydoğmuş Şen 	6 	4.5
+FZKT2402 	Modern Fizik 	Prof. Dr. Olcay Bölükbaşı Yalçınkaya 	5 	4 
+FZKT2403 	Fizikte Matematiksel Metotlar II 	Prof. Dr. Ertan Güdeli 	6 	4.5 
+FZKT2404 	Elektronik I - Analog Elektronik 	Doç. Dr. Neslihan Üzar Kılıç 	5 	4 
+FZKT2412 	Akustik Fizik 	Prof. Dr. Feyza Güzelçimen 	4 	3 	
+FZKT2405 	Optik Laboratuvarı 	Doç. Dr. Şahin Yakut 	3 	2 
+FZKT1201 	Elektrik ve Manyetizma 	Doç. Dr. Hulusi Kemal Ulutaş
 
 ## 4. Dosya İsimlendirme Formatı:
 - Format: `DERS_KODU_DERS_KISA_ADI_HAFTA_OTURUM_KONU.tex`
