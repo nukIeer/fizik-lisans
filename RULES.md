@@ -1,7 +1,18 @@
-Sana verdiğim ders notlarını aşağıdaki kurallara göre düzenleyerek eksiksiz bir LaTeX belgesine dönüştür:
+Aşağıdaki düzeltilmiş ve eklenmiş LaTeX kurallarını hazırladım:
 
-1. Belge Formatı ve Başlık:
-   - Belgede aşağıdaki standart giriş formatını MUTLAKA kullan ve ders bilgilerini dosya adından alarak uygun şekilde doldur:
+# LaTeX Belge Oluşturma Kuralları
+
+## 1. Belge Formatı ve Başlık:
+- Belgede aşağıdaki standart giriş formatını MUTLAKA kullan ve ders bilgilerini dosya adından alarak uygun şekilde doldur:
+
+```latex
+\documentclass[11pt,letterpaper,twocolumn]{fenbil}
+
+% İki sütun arasında taşma sorununu engellemek için paketler
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
 
 \begin{document}
 \twocolumn[
@@ -26,44 +37,90 @@ Beyazıt, Fatih, İstanbul, Türkiye\newline
 \end{minipage}
 \small
 \end{@twocolumnfalse}]
+
+% Dosya adını belgenin en üstünde göster
+\begin{center}
+\textbf{Dosya Adı:} [DOSYA ADI BURAYA]
+\end{center}
+
 \hspace{25pt}
 \hspace{25pt}
 \hspace{25pt}
 \section{[İLK BÖLÜM BAŞLIĞI BURAYA]}
+```
 
-   - Dosyanın adını (örn: FZKT2403_FMM_H04S1_EgriselVektorlerTensorler.pdf) belgenin üst kısmında veya dipnot olarak belirt
-   - Dökümanın iki kolonlu bir formatla devam etmesini sağla.
+- Dosya adını (örn: FZKT2403_FMM_H04S1_EgriselVektorlerTensorler.pdf) belgenin üst kısmında mutlaka belirt
+- Dökümanın iki kolonlu bir formatla devam etmesini sağla
 
-2. Matematiksel İçerik:
-   - Tüm matematiksel ifadeleri LaTeX formatında düzgün şekilde yaz
-   - a olarak yazdığım ∂ sembollerini kısmi türev olarak doğru kullan (\partial)
-   - Formülleri ve denklemleri uygun LaTeX komutlarıyla göster
-   - Adım adım çözümleri numaralandır ve her adımın açıklamasını ekle
-   - Harfleri ve sembolleri düzeltirken dikkatli ol, metin içinde geçen harfler ve semboller yanlış görülmüş olabilir
+## 2. Dönem Planı ve Tarihlendirme:
+- 1. Hafta **17 Feb Monday** ile başlıyor. Tüm tarihlendirmeleri buna göre hesapla.
+- Dosya adındaki "H" (Hafta) ve "S" (Session) bilgilerini bu başlangıç tarihine göre düzenle
 
-3. Görsel Öğeler:
-   - Metinde betimlenen şemaları ve diyagramları TikZ veya diğer LaTeX paketleri kullanarak oluştur
-   - Grafikleri ve çizimleri metinde açıklanan detaylara göre ekle
+## 3. Öğretim Üyeleri:
+- FZKT2401 (Matematik Fizik Metodları I): Prof. Dr. İlhan İnan
+- FZKT2403 (Fonksiyonlu Matematik Metodları): Dr. Öğr. Üyesi Muzaffer Eken
+- FZKT2405 (Kuantum Fiziği I): Doç. Dr. M. Ali Oflaz
+- FZKT2407 (Elektrodinamik): Prof. Dr. Eldar Veliev
+- FZKT2409 (İstatistik Fizik I): Prof. Dr. Yusuf Yılmaz
 
-4. Önemli Noktalar ve Sınav İçeriği:
-   - ÖNEMLİ başlığı altında anahtar kavramları ve kritik noktaları vurgula
-   - "SINAV İÇİN" başlığı altında sınavda çıkabilecek soruları ve konuları özel olarak belirt
-   - Bu bölümleri renkli kutular içinde göster (örneğin: \begin{tcolorbox}[title=ÖNEMLİ] ... \end{tcolorbox})
+## 4. Dosya İsimlendirme Formatı:
+- Format: `DERS_KODU_DERS_KISA_ADI_HAFTA_OTURUM_KONU.tex`
+- Örnek: `FZKT2403_FMM_H04S1_EgriselVektorlerTensorler.tex`
+- Dosya isminin daima belgenin en başında görünmesi sağlanmalıdır
 
-5. Düzeltme ve İyileştirme:
-   - Yazım ve dilbilgisi hatalarını düzelt
-   - Tutarsız gösterimleri ve notasyonları standartlaştır
-   - İçeriği daha anlaşılır olmak için yeniden düzenle, gerekirse basitleştir
+## 5. İki Sütunlu Format ve Taşma Sorunu:
+- İki sütunlu formatta uzun formüller, denklemler veya tablolar taşma yapabilir
+- Bunun için aşağıdaki önlemleri al:
+  - Uzun denklemler için `\begin{equation*}` yerine `\begin{align*}` kullan ve uygun yerlerde satır sonlandır
+  - Çok uzun denklemleri ve tabloları tek sütun genişliğinde göstermek için:
+    ```latex
+    \onecolumn
+    [İçerik buraya]
+    \twocolumn
+    ```
+  - Mikrotipi etkinleştir: `\usepackage{microtype}`
+  - Uzun formülleri parçalara böl veya alt alta yaz
 
-6. Çözümlü Örnekler ve Problem Gösterimi:
-   - Derste çözülen problemleri adım adım göster
-   - Her adımı açıkla ve kullanılan teorik bilgiyi belirt
-   - Benzer problemlere yaklaşım için yöntemler öner
+## 6. Matematiksel İçerik:
+- Tüm matematiksel ifadeleri LaTeX formatında düzgün şekilde yaz
+- a olarak yazdığım ∂ sembollerini kısmi türev olarak doğru kullan (`\partial`)
+- Formülleri ve denklemleri uygun LaTeX komutlarıyla göster
+- Adım adım çözümleri numaralandır ve her adımın açıklamasını ekle
+- Harfleri ve sembolleri düzeltirken dikkatli ol, metin içinde geçen harfler ve semboller yanlış görülmüş olabilir
 
-7. LaTeX Preamble ve Paketler:
-   - Belgeyi oluştururken aşağıdaki LaTeX preamble'ı kullan ve gerekli tüm paketleri ekle:
+## 7. Görsel Öğeler:
+- Metinde betimlenen şemaları ve diyagramları TikZ veya diğer LaTeX paketleri kullanarak oluştur
+- Grafikleri ve çizimleri metinde açıklanan detaylara göre ekle
 
+## 8. Önemli Noktalar ve Sınav İçeriği:
+- ÖNEMLİ başlığı altında anahtar kavramları ve kritik noktaları vurgula
+- "SINAV İÇİN" başlığı altında sınavda çıkabilecek soruları ve konuları özel olarak belirt
+- Bu bölümleri renkli kutular içinde göster (örneğin: `\begin{tcolorbox}[title=ÖNEMLİ] ... \end{tcolorbox}`)
+
+## 9. Düzeltme ve İyileştirme:
+- Yazım ve dilbilgisi hatalarını düzelt
+- Tutarsız gösterimleri ve notasyonları standartlaştır
+- İçeriği daha anlaşılır olmak için yeniden düzenle, gerekirse basitleştir
+
+## 10. Çözümlü Örnekler ve Problem Gösterimi:
+- Derste çözülen problemleri adım adım göster
+- Her adımı açıkla ve kullanılan teorik bilgiyi belirt
+- Benzer problemlere yaklaşım için yöntemler öner
+
+## 11. LaTeX Preamble ve Paketler:
+- Belgeyi oluştururken aşağıdaki LaTeX preamble'ı kullan ve gerekli tüm paketleri ekle:
+
+```latex
 \documentclass[11pt,letterpaper,twocolumn]{fenbil}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{physics}
+\usepackage{microtype} % Taşma sorunlarını azaltmak için
+\usepackage{geometry}
+\geometry{margin=2.5cm} % Sayfa kenar boşluklarını ayarla
+\usepackage{ragged2e} % Daha iyi hizalama.
+```
 
-
-Lütfen tam ve eksiksiz bir LaTeX belgesi oluştur, tüm matematik sembollerini doğru formatlarda kullan, ve önemli yerleri vurgula.
+Lütfu tam ve eksiksiz bir LaTeX belgesi oluştur, tüm matematik sembollerini doğru formatlarda kullan, ve önemli yerleri vurgula.
