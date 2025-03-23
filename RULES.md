@@ -97,6 +97,7 @@ FZKT1201 	Elektrik ve Manyetizma 	Doç. Dr. Hulusi Kemal Ulutaş
 - Grafikleri ve çizimleri metinde açıklanan detaylara göre ekle
 
 ## 8. Önemli Noktalar ve Sınav İçeriği:
+- Tüm sembolleri ve matematiksel ifadelerin ne olduğunu açıkla
 - ÖNEMLİ başlığı altında anahtar kavramları ve kritik noktaları vurgula
 - "SINAV İÇİN" başlığı altında sınavda çıkabilecek soruları ve konuları özel olarak belirt
 - Bu bölümleri renkli kutular içinde göster (örneğin: `\begin{tcolorbox}[title=ÖNEMLİ] ... \end{tcolorbox}`)
