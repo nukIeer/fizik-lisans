@@ -95,6 +95,7 @@ FZKT1201 	Elektrik ve Manyetizma 	Doç. Dr. Hulusi Kemal Ulutaş
 ## 7. Görsel Öğeler:
 - Metinde betimlenen şemaları ve diyagramları TikZ veya diğer LaTeX paketleri kullanarak oluştur
 - Grafikleri ve çizimleri metinde açıklanan detaylara göre ekle
+- Görsel öğelerin betimlemelerini yaz kaynağa uygun şekilde
 
 ## 8. Önemli Noktalar ve Sınav İçeriği:
 - Tüm sembolleri ve matematiksel ifadelerin ne olduğunu açıkla
