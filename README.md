@@ -169,8 +169,8 @@ IU-Fizik-Dersleri/
 | Etkinlik | Tarih |
 |:--------:|:-----:|
 | **Vize Sınavları** | 08-14 Nisan 2025 |
-| **Final Sınavları** | 03-15 Haziran 2025 |
-| **Bütünleme Sınavları** | 22-30 Haziran 2025 |
+| **Final Sınavları** | 16-30 Haziran 2025 |
+| **Bütünleme Sınavları** | 01-14 Temmuz 2025 |
 
 </div>
 
